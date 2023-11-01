@@ -1,0 +1,51 @@
+[
+  {
+    "model": "User.lecturer",
+    "pk": 1,
+    "fields": {
+      "user_id": 1
+    }
+  },
+  {
+    "model": "User.lecturer",
+    "pk": 2,
+    "fields": {
+      "user_id": 4
+    }
+  },
+  {
+    "model": "User.lecturer",
+    "pk": 3,
+    "fields": {
+      "user_id": 6
+    }
+  },
+  {
+    "model": "User.lecturer",
+    "pk": 4,
+    "fields": {
+      "user_id": 3
+    }
+  },
+  {
+    "model": "User.lecturer",
+    "pk": 5,
+    "fields": {
+      "user_id": 5
+    }
+  },
+  {
+    "model": "User.lecturer",
+    "pk": 6,
+    "fields": {
+      "user_id": 2
+    }
+  },
+  {
+    "model": "User.lecturer",
+    "pk": 7,
+    "fields": {
+      "user_id": 18
+    }
+  }
+]

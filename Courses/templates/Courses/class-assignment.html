@@ -1,0 +1,129 @@
+{% extends 'Courses/base-class-course.html' %}
+{% load static %}
+
+{% block title %}
+  {% if user.is_lecturer %}
+    <title>{{ lecturer_class.course.name }} - {{ lecturer_class.schedule }} Assignment</title>
+  {% else %}
+    <title>{{ student_class.course.name }} - {{ student_class.schedule }} Assignment</title>
+  {% endif %}
+{% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'Courses/class-assignment.css' %}">
+{% endblock %}
+
+{% block class-assignment-active %}active{% endblock %}
+
+{% block panel-content %}
+  {% if user.is_lecturer %}
+    <a class="upload-button" href="{% url 'create-classwork-view' user.lecturer.id lecturer_class.id %}">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <g id="Property 1=ico, Property 2=24, Property 3=ui, Property 4=new_message">
+          <path id="Icon color" fill-rule="evenodd" clip-rule="evenodd"
+                d="M21 11.5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H12.5C12.7761 3 13 3.22386 13 3.5V4.5C13 4.77614 12.7761 5 12.5 5H5V19H19V11.5C19 11.2239 19.2239 11 19.5 11H20.5C20.7761 11 21 11.2239 21 11.5ZM20.71 3.71L20.29 3.29C20.1037 3.10526 19.8523 3.0011 19.59 3H19.29C19.0277 3.0011 18.7763 3.10526 18.59 3.29L16.79 5.09C16.5994 5.28442 16.5994 5.59558 16.79 5.79L18.21 7.21C18.4044 7.40057 18.7156 7.40057 18.91 7.21L20.71 5.41C20.8947 5.22374 20.9989 4.97234 21 4.71V4.41C20.9989 4.14766 20.8947 3.89626 20.71 3.71ZM7.04 16.29L7.83 14.29C7.92875 14.0357 8.07849 13.8043 8.27 13.61L14.85 7C15.0444 6.80943 15.3556 6.80943 15.55 7L17 8.45C17.1906 8.64442 17.1906 8.95558 17 9.15L10.37 15.71C10.1757 15.9015 9.9443 16.0512 9.69 16.15L7.69 16.94C7.50421 17.0148 7.29173 16.9715 7.15 16.83C7.00849 16.6883 6.96521 16.4758 7.04 16.29Z"
+                fill="currentColor"></path>
+        </g>
+      </svg>
+      New Assignment
+    </a>
+  {% endif %}
+
+  <h4>ONGOING</h4>
+  {% for test in ongoing %}
+    <article>
+      <div class="heading">
+        <h3>{{ test.obj.test_name }}</h3>
+        <footer>
+          <p class="due-text">START:
+            <time datetime="{{ test.obj.publish_time | date:"c" }}">{{ test.obj.publish_time }}</time>
+          </p>
+          <p class="due-text">DUE:
+            <time datetime="{{ test.obj.end_time | date:"c" }}">{{ test.obj.end_time }}</time>
+          </p>
+        </footer>
+      </div>
+      <div class="container">
+        <div class="new-tag" {% if test.is_new == False %}style="visibility: hidden"{% endif %}>NEW</div>
+
+        {#      <p>{{ test.obj.test_description | linebreaks }}</p>#}
+
+        {% if user.is_student %}
+        {% if test.obj.is_quiz %}
+          <a href="{% url 'do-test' user.student.id student_class.id test.obj.id %}">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <g id="Property 1=ico, Property 2=24, Property 3=ui, Property 4=new_message">
+                <path id="Icon color" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M21 11.5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H12.5C12.7761 3 13 3.22386 13 3.5V4.5C13 4.77614 12.7761 5 12.5 5H5V19H19V11.5C19 11.2239 19.2239 11 19.5 11H20.5C20.7761 11 21 11.2239 21 11.5ZM20.71 3.71L20.29 3.29C20.1037 3.10526 19.8523 3.0011 19.59 3H19.29C19.0277 3.0011 18.7763 3.10526 18.59 3.29L16.79 5.09C16.5994 5.28442 16.5994 5.59558 16.79 5.79L18.21 7.21C18.4044 7.40057 18.7156 7.40057 18.91 7.21L20.71 5.41C20.8947 5.22374 20.9989 4.97234 21 4.71V4.41C20.9989 4.14766 20.8947 3.89626 20.71 3.71ZM7.04 16.29L7.83 14.29C7.92875 14.0357 8.07849 13.8043 8.27 13.61L14.85 7C15.0444 6.80943 15.3556 6.80943 15.55 7L17 8.45C17.1906 8.64442 17.1906 8.95558 17 9.15L10.37 15.71C10.1757 15.9015 9.9443 16.0512 9.69 16.15L7.69 16.94C7.50421 17.0148 7.29173 16.9715 7.15 16.83C7.00849 16.6883 6.96521 16.4758 7.04 16.29Z"
+                      fill="currentColor"/>
+              </g>
+            </svg>
+          </a>
+        {% else %}
+        <a href="{% url 'upload-assignment' user.student.id student_class.id test.obj.id %}">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <g id="Property 1=ico, Property 2=24, Property 3=ui, Property 4=new_message">
+              <path id="Icon color" fill-rule="evenodd" clip-rule="evenodd"
+                    d="M21 11.5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H12.5C12.7761 3 13 3.22386 13 3.5V4.5C13 4.77614 12.7761 5 12.5 5H5V19H19V11.5C19 11.2239 19.2239 11 19.5 11H20.5C20.7761 11 21 11.2239 21 11.5ZM20.71 3.71L20.29 3.29C20.1037 3.10526 19.8523 3.0011 19.59 3H19.29C19.0277 3.0011 18.7763 3.10526 18.59 3.29L16.79 5.09C16.5994 5.28442 16.5994 5.59558 16.79 5.79L18.21 7.21C18.4044 7.40057 18.7156 7.40057 18.91 7.21L20.71 5.41C20.8947 5.22374 20.9989 4.97234 21 4.71V4.41C20.9989 4.14766 20.8947 3.89626 20.71 3.71ZM7.04 16.29L7.83 14.29C7.92875 14.0357 8.07849 13.8043 8.27 13.61L14.85 7C15.0444 6.80943 15.3556 6.80943 15.55 7L17 8.45C17.1906 8.64442 17.1906 8.95558 17 9.15L10.37 15.71C10.1757 15.9015 9.9443 16.0512 9.69 16.15L7.69 16.94C7.50421 17.0148 7.29173 16.9715 7.15 16.83C7.00849 16.6883 6.96521 16.4758 7.04 16.29Z"
+                    fill="currentColor"/>
+            </g>
+          </svg>
+        </a>
+        {% endif %}
+        {% else %}
+          {% if not test.obj.studenttest_set.exists %}
+            <a href="{% url 'change-test-information' user.lecturer.id lecturer_class.id test.obj.id %}">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path id="Icon color" fill-rule="evenodd" clip-rule="evenodd"
+                      d="M19.9024 3.43911L20.5609 4.09778C20.8416 4.37825 20.9995 4.75875 20.9999 5.15565V5.91412C21.0049 6.31791 20.8466 6.7066 20.5609 6.99194L18.7151 8.80828C18.6215 8.90274 18.4939 8.95588 18.3609 8.95588C18.2279 8.95588 18.1004 8.90274 18.0067 8.80828L15.2032 5.96402C15.013 5.76998 15.013 5.45945 15.2032 5.26542L17.009 3.43911C17.2943 3.15335 17.6829 2.99499 18.0866 2.99999H18.8448C19.2416 3.00034 19.622 3.15829 19.9024 3.43911ZM16.8195 10.6845C17.0096 10.4905 17.0096 10.1799 16.8195 9.9859L13.966 7.17158C13.8723 7.07711 13.7448 7.02398 13.6118 7.02398C13.4788 7.02398 13.3513 7.07711 13.2576 7.17158L5.20608 15.2253C5.01142 15.4183 4.85859 15.6493 4.75711 15.904L3.04105 20.2352C2.94383 20.4601 3.02415 20.7222 3.23061 20.854C3.37201 20.9952 3.58402 21.0384 3.76938 20.9638L8.09945 19.2073C8.35403 19.1058 8.58498 18.9529 8.7779 18.7582L16.8195 10.6845Z"
+                      fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="{% url 'delete-classwork-view' user.lecturer.id lecturer_class.id test.obj.id %}">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" 
+                d="M20 5.5V4.5C20 4.22386 19.7761 4 19.5 4H15V3C15 2.44772 14.5523 2 14 2H10C9.44772 2 9 2.44772 9 3V4H4.5C4.22386 4 4 4.22386 4 4.5V5.5C4 5.77614 4.22386 6 4.5 6H19.5C19.7761 6 20 5.77614 20 5.5ZM7.87 22C6.81787 22.0026 5.94365 21.1896 5.87 20.14L5 8H19L18.15 20.14C18.0764 21.1896 17.2021 22.0026 16.15 22H7.87Z" 
+                fill="currentColor"/>
+              </svg>
+            </a>
+          {% else %}
+            <a href="{% url 'submitted-view' user.lecturer.id lecturer_class.id test.obj.id %}">
+              <svg width="25" height="24" viewBox="0 0 25 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M12.1463 4.99996C16.5404 4.9548 20.5106 7.61642 22.1402 11.7C22.1564 11.7993 22.1564 11.9006 22.1402 12C22.1434 12.1129 22.123 12.2253 22.0802 12.33C20.449 16.3812 16.5112 19.0252 12.1463 19C7.7764 19.0219 3.83713 16.369 2.21232 12.31C2.1722 12.2116 2.15182 12.1062 2.15235 12C2.15363 11.8874 2.1739 11.7758 2.21232 11.67C3.84348 7.61872 7.78134 4.97471 12.1463 4.99996ZM9.14809 12C9.14809 13.6568 10.4904 15 12.1463 15C12.9414 15 13.704 14.6839 14.2663 14.1213C14.8286 13.5587 15.1444 12.7956 15.1444 12C15.1444 10.3431 13.8021 8.99996 12.1463 8.99996C10.4904 8.99996 9.14809 10.3431 9.14809 12Z"
+                      fill="currentColor"/>
+              </svg>
+            </a>
+          {% endif %}
+        {% endif %}
+      </div>
+
+    </article>
+  {% endfor %}
+
+  <h4>UPCOMING</h4>
+  {% for test in upcoming %}    <article>
+      <div class="heading">
+        <h3>{{test.obj.test_name}}</h3>
+        <p class="due-text">DUE:
+          <time>{{ test.obj.end_time }}</time>
+        </p>
+      </div>
+    </article>
+  {% endfor %}
+
+  <h4>OVERDUE</h4>
+  {% for test in overdue %}
+    <article>
+      <div class="heading">
+        <h3>{{ test.obj.test_name }}</h3>
+        <p class="due-text">DUE: {{ test.obj.end_time }}</p>
+        <p>
+          <a href="{% url 'do-test' user.student.id student_class.id test.obj.id %}">Do test(will be marked as
+            overdue)</a>
+        </p>
+      </div>
+    </article>
+  {% endfor %}
+{% endblock %}

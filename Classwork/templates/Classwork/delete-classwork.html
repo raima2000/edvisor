@@ -1,0 +1,28 @@
+{% extends 'Classwork/base-test.html'%}
+{% load static %}
+{% block title %}
+  <title>{{ lecturer_class.course.name }} - {{ lecturer_class.schedule }} Edit announcement</title>
+{% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'User/upload-assignment.css' %}">
+  <link rel="stylesheet" href="{% static 'User/upload-announcement.css' %}">
+{% endblock %}
+
+{% block panel-content %}
+  <article>
+  <form method='POST'>
+    {%csrf_token%}
+    <h2>Delete the test {{test.test_name}}</h2>
+    <div class="btn-middle">
+    <input class="btn-delete" type="submit" value="Delete">
+      <a class="btn cancel" href="{% url 'lecturer-class-assignment-page' id class_id %}">
+        Cancel
+      </a>
+    </div>
+    
+  </form>
+  
+</article>
+{% endblock %}

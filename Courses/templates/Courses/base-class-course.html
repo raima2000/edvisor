@@ -1,0 +1,86 @@
+{% extends 'Home/index.html' %}
+{% load static %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{% static 'Courses/base-student-class.css' %}">
+{% endblock %}
+
+{% block my-courses-active %}active{% endblock %}
+
+{% block main-content %}
+  <article class="panel">
+    <header>
+      {% if user.user_type == 'Student' %}
+        <h2>{{ student_class.course.name }} - {{ student_class.schedule }} - {{ student_class.sem_year }}</h2>
+      {% elif user.user_type == 'Lecturer' %}
+        <h2>{{ lecturer_class.course.name }} - {{ lecturer_class.schedule }} - {{ lecturer_class.sem_year }}</h2>
+      {% endif %}
+
+      {% if user.user_type == 'Student' %}
+        <p>Instructor: {{ student_class.lecturer.user_id.full_name }}</p>
+      {% endif %}
+
+      {% block tabs_navbar %}
+        <ul class="flex-tabs">
+          <li>
+            <a class="tab {% block class-announcements-active %}{% endblock %}"
+               href="{% if user.user_type == 'Student' %}
+                      {% url 'student-class-announcement-page' user.student.id student_class.id %}
+                      {% elif user.user_type == 'Lecturer' %}
+                      {% url 'lecturer-class-announcement-page' user.lecturer.id lecturer_class.id %}
+                      {% endif %}">
+              Announcements
+            </a>
+          </li>
+          <li>
+            <a class="tab {% block class-content-active %}{% endblock %}"
+               href="{% if user.user_type == 'Student' %}
+                      {% url 'student-class-content-page' user.student.id student_class.id %}
+                      {% elif user.user_type == 'Lecturer' %}
+                      {% url 'lecturer-class-content-page' user.lecturer.id lecturer_class.id %}
+                      {% endif %}">
+              Content
+            </a>
+          </li>
+          <li>
+            <a class="tab {% block class-assignment-active %}{% endblock %}"
+               href="{% if user.user_type == 'Student' %}
+                      {% url 'student-class-assignment-page' user.student.id student_class.id %}
+                      {% elif user.user_type == 'Lecturer' %}
+                      {% url 'lecturer-class-assignment-page' user.lecturer.id lecturer_class.id %}
+                      {% endif %}">
+              Assignment
+            </a>
+          </li>
+          <li>
+            <a class="tab {% block class-staff-contacts-active %}{% endblock %}"
+                 href="{% if user.user_type == 'Student' %}{% url 'student-staff-contact-page' user.student.id student_class.id %}
+                       {% elif user.user_type == 'Lecturer' %}{% url 'lecturer-staff-contact-page' user.lecturer.id lecturer_class.id %}
+                       {% endif %}">Staff contact</a>
+          </li>
+          {% if user.user_type == 'Lecturer' %}
+            <li>
+              <a class="tab {% block class-view-student-list-active %}{% endblock %}"
+                 href="{% url 'lecturer-class-view-student-list' user.lecturer.id lecturer_class.id %}">Student List</a>
+            </li>
+          {% elif user.user_type == 'Student' %}
+            <li>
+              <a class="tab {% block student-view-self-course-performance-active %}{% endblock %}" href="{% url 'student-view-self-course-performance' user.student.id student_class.id %}">Course Performance</a>
+            </li>
+          {% endif %}
+          <li>
+            <a class="tab {% block class-feedback-active %}{% endblock %}"
+                 href="{% if user.user_type == 'Student' %}{% url 'student-class-feedback-page' user.student.id student_class.id %}
+                       {% elif user.user_type == 'Lecturer' %}{% url 'lecturer-class-feedback-page' user.lecturer.id lecturer_class.id %}
+                       {% endif %}">Feedback</a>
+          </li>
+        </ul>
+      {% endblock tabs_navbar %}
+    </header>
+
+    {% block upload %}{% endblock upload %}
+
+    {% block panel-content %}{% endblock panel-content %}
+  </article>
+{% endblock %}
+

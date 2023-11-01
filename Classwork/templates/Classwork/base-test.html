@@ -1,0 +1,68 @@
+{% extends 'Home/index.html' %}
+{% load static %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{% static 'Courses/base-student-class.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    // This code activates flatpickr on fields with the 'datetimefield' class when the document has loaded
+    window.addEventListener("DOMContentLoaded", function () {
+        flatpickr(".datetimefield", {
+            enableTime: true,
+            enableSeconds: true,
+            dateFormat: "Y-m-d H:i:S",
+        });
+    });
+</script>
+{% endblock %}
+
+{% block main-content %}
+  <article class="panel">
+    <header>
+      {% if user.user_type == 'Student' %}
+        <h2>{{ student_class.course.name }} - {{ student_class.schedule }} - {{ student_class.sem_year }}</h2>
+      {% elif user.user_type == 'Lecturer' %}
+        <h2>{{ lecturer_class.course.name }} - {{ lecturer_class.schedule }} - {{ lecturer_class.sem_year }}</h2>
+      {% endif %}
+
+      {% if user.user_type == 'Student' %}
+        <p>Instructor: {{ student_class.lecturer.user_id.full_name }}</p>
+      {% endif %}
+  <title>Document</title>
+</header>
+<body>
+  {% block panel-content %}{% endblock panel-content %}
+    <script>
+      document.body.addEventListener('htmx:configRequest', (event) => {
+          event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+      })
+  </script>
+</body>
+</article>
+{% endblock %}
+
+<!-- DUY 
+
+Note: Đăng nhập vô lecturer account: loan.nguyen@lecturer.com,
+                  student account: khoa.nguyen@student.com 
+                  Môn Software Engineering - TUE Afternoon - Sem 1 - 2022
+
+cái title tên môn học, instructor trên cùng của các page: 
+  create-classwork.html, 
+  delete-classwork.html,
+  submitted-list.html,
+  view-student-test.html,
+  upload-assignment.html
+
+Due Date, Submitted Time của các page:
+  upload-assignment.html,
+  view-student-course-performance.html,
+  submitted-list.html,
+
+Phần publish time, end time của các page:
+  create-classwork.html - khi create new và khi edit luôn nha
+
+Với lại t k biết chỉnh style cái checkbox Clear với Is quiz. Nếu đc m chỉnh sao cho nó nằm cạnh nhau giúp t với. 
+
+Hết rồi thankss nhèoo -->

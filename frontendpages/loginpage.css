@@ -1,0 +1,151 @@
+@import url('base.css');
+
+#background img{
+    position: absolute;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.mainpanel{
+    width: 68rem;
+    height: 70.2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background-color: #e7e9ef;
+    box-shadow: 0rem 0rem 5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.innerpanel{
+    position: absolute;
+    width: 48rem;
+    height: 64.6rem;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.part1{
+    width: 30.5rem;
+    height: 20.8rem;
+    position: static;
+    margin: auto;
+}
+
+.projectname{
+    position: static;
+    text-align:center;
+    font-size: 1.92rem;
+    font-style:inherit;
+    font-weight: bold;
+    m
+}
+
+.iulogo{
+    position: static;
+    width: 14.4rem;
+    height: 16.2rem;
+    margin:auto;
+}
+
+.logo img{
+    width: 20.4rem;
+    height: 20.2rem;
+}
+
+.part2{
+    position: static;
+    width: 48rem;
+    height: 38.8rem;
+    margin: auto;
+}
+
+.loginpanel{
+    width: 48rem;
+    height: 17.9rem;
+}
+
+input[type = text], input[type = password]{
+    position: static;
+    width: 100%;
+    padding: 1.2rem 2rem;
+    margin: 0.8rem 0;
+    display: inline-block;
+    border: 0.1rem solid #ccc;
+    box-sizing: border-box;
+    border-radius: 0.6rem;
+}
+
+.forgotpass{
+    position: static;
+    text-align: right;
+}
+
+.loginbutton {
+    font-size: medium;
+    font-weight: bold;
+    color: var(--white-default-text);
+    background-color: var(--iu-primary-default);
+    padding: 1.4rem 2rem;
+    margin: 0.8rem 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0.6rem;
+}
+
+.loginbutton:hover{
+    background-color: var(--iu-secondary-light);
+    color: var(--iu-primary-dark-text);
+}
+
+.or{
+    width: 100%; 
+    text-align: center; 
+    color: var(--gray-default);
+    border-bottom: 0.1rem solid var(--gray-default); 
+    line-height: 0.16rem;
+    margin: 3rem 0 3rem;
+
+}
+
+.or span{
+    background:#fff; 
+    padding:0 1rem; 
+}
+
+.loginasguessbutton{
+    background-color: var(--white-default);
+    font-size: medium;
+    font-weight: bold;
+    color: var(--iu-primary-default-text);
+    padding: 1.4rem 2rem;
+    margin: 0.8rem 0;
+    border: 0.1rem solid #DCE2E4;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0.6rem;
+}
+
+.loginasguessbutton:hover{
+    background-color: var(--iu-secondary-light);
+    color: var(--iu-primary-dark-text);
+}
+
+.passvisibility{
+    position: static;
+}
+
+
+
+
+
+

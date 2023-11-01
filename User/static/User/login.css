@@ -1,0 +1,146 @@
+#background img{
+    position: absolute;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.mainpanel{
+    width: 68rem;
+    height: 79.2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white-default);
+    box-shadow: 0 0 5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.innerpanel{
+    position: absolute;
+    width: 48rem;
+    height: 64.6rem;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.part1{
+    width: 30.5rem;
+    height: 20.8rem;
+    position: static;
+    margin: auto;
+}
+
+.projectname{
+    position: static;
+    text-align: center;
+    font-size: 1.92rem;
+    font-style:inherit;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.iulogo{
+    position: static;
+    width: 16.4rem;
+    height: 16.2rem;
+    margin: auto;
+}
+
+.logo img{
+    width: 16.4rem;
+    height: 16.2rem;
+}
+
+.part2{
+    position: static;
+    width: 48rem;
+    height: 38.8rem;
+    margin: auto;
+}
+
+.loginpanel{
+    width: 48rem;
+    height: 17.9rem;
+}
+
+input[type = text], input[type = password]{
+    position: static;
+    width: 100%;
+    padding: 1.2rem 2rem;
+    margin: 0.2rem 0;
+    display: inline-block;
+    border: 0.1rem solid var(--gray-lighter);
+    box-sizing: border-box;
+    border-radius: 0.6rem;
+}
+
+.forgotpass{
+    text-align: right;
+    font-weight: 500;
+    color: var(--iu-primary-default-text);
+    margin-bottom: 2rem;
+}
+
+.loginbutton {
+    font-size: medium;
+    font-weight: bold;
+    color: var(--white-default-text);
+    background-color: var(--iu-primary-default);
+    padding: 1.4rem 2rem;
+    margin: 0.8rem 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0.6rem;
+
+    transition: background-color var(--hover-transition);
+}
+
+.loginbutton:hover{
+    background-color: var(--iu-primary-dark);
+}
+
+.or{
+    width: 100%;
+    text-align: center;
+    color: var(--gray-default);
+    border-bottom: 0.1rem solid var(--gray-lighter);
+    margin: 3rem 0 3rem;
+    font-size: 1.8rem;
+    line-height: 0;
+    font-weight: 200;
+}
+
+.or span{
+    background:#fff;
+    padding:0 1rem;
+}
+
+.loginasguessbutton{
+    display: block;
+    background-color: var(--white-default);
+    font-size: medium;
+    font-weight: bold;
+    color: var(--iu-primary-default-text);
+    padding: 1.4rem 2rem;
+    margin: 0.8rem 0;
+    border: 0.1rem solid var(--gray-lighter);
+    width: 100%;
+    height: 5rem;
+    border-radius: 0.6rem;
+    text-align: center;
+
+    transition: all var(--hover-transition);
+}
+
+.loginasguessbutton:hover{
+    background-color: var(--gray-lighter);
+    border-color: transparent;
+}

@@ -1,0 +1,54 @@
+{% extends 'Classwork/base-test.html' %}
+{% load static %}
+
+{% block title %}
+  <title>{{ lecturer_class.course.name }} - {{ lecturer_class.schedule }} New Assignment</title>
+{% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'User/upload-assignment.css' %}">
+  <link rel="stylesheet" href="{% static 'User/upload-announcement.css' %}">
+  <script src="{% static 'User/upload-content.js' %}" defer></script>
+{% endblock %}
+{%block panel-content%}
+<article>
+  <form method = "POST">
+  {% csrf_token %}
+  <div id="questionform">
+    {% for question in test.question_set.all%}
+    <p>{{forloop.counter}}.{{question.question}}</p>
+    <button type="button" onclick="location.href='{% url 'update-question-view' id class_id test.id question.id %}'">Update</button>
+    <button type="button" onclick="location.href='{% url 'delete-question-view' id class_id test.id question.id %}'">Delete</button>
+    {% if question.is_written %}
+    {% else %}
+    {% for option in question.multiplechoiceoption_set.all %}
+    <ul>
+    {%if option.is_true%}
+      <li><strong>{{option.option}}</strong></li>
+    {%else%}
+      <li>{{option.option}}</li>
+    {%endif%}
+    </ul>
+    {%endfor%}
+    {%endif%}
+    {%endfor%}
+  </div>
+  <div>
+    <!-- <button hx-get="{% url 'written-form' id class_id test.id%}" hx-swap = "beforeend" hx-target="#questionform">Add new written question</button>
+    <button hx-get="{% url 'multiplechoice-form' id class_id test.id %}" hx-swap = "beforeend" hx-target="#questionform">Add new multiple choice question</button>  -->
+    <a href="{% url 'written-form' id class_id test.id%}">Add new written question</a>
+    <a href="{% url 'multiplechoice-form' id class_id test.id %}">Add new multiple choice question</a>
+  </div>
+  <!-- <div>
+    <button type="submit">
+      Save
+    </button>
+  </div> -->
+  </form>
+  <div>
+    <a href="{% url 'lecturer-class-assignment-page' id class_id%}">Go back to classworks view</a>
+  </div>
+</article>
+
+{% endblock %}

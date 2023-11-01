@@ -1,0 +1,30 @@
+[
+  {
+    "model": "Courses.Major",
+    "pk": 1,
+    "fields": {
+      "name": "Computer Science"
+    }
+  },
+  {
+    "model": "Courses.Major",
+    "pk": 2,
+    "fields": {
+      "name": "Data Science"
+    }
+  },
+  {
+    "model": "Courses.Major",
+    "pk": 3,
+    "fields": {
+      "name": "Computer Engineering"
+    }
+  },
+  {
+    "model": "Courses.Major",
+    "pk": 4,
+    "fields": {
+      "name": "Information Technology"
+    }
+  }
+]

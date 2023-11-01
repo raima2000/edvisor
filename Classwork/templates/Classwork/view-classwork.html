@@ -1,0 +1,26 @@
+{% extends 'Classwork/base-test.html' %}
+{%block body%}
+
+    {% for test in tests %}
+    <h3>{{test.test_name}}   <a href="{% url 'edit-classwork-view' id class_id test.id %}">EDIT</a>  <a href="{%url 'delete-classwork-view' id class_id test.id%}">DELETE</a></h3>
+    <!-- {% for question in test.question_set.all%}
+    <p>{{forloop.counter}}.{{question.question}}</p>
+    {% if question.is_written %}
+    {% else %}
+    {% for option in question.multiplechoiceoption_set.all %}
+    <ul>
+    {%if option.is_true%}
+      <li><strong>{{option.option}}</strong></li>
+    {%else%}
+      <li>{{option.option}}</li>
+    {%endif%}
+    </ul>
+    {%endfor%}
+    {%endif%}
+    {%endfor%} -->
+    {%endfor%}
+    <a href="{% url 'create-classwork-view' id class_id%}">Create new test</a>
+    <div>
+      <a href="{% url 'lecturer-class-assignment-page' id class_id %}">Go back to class view</a>
+    </div>
+  {% endblock body %}

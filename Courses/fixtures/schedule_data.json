@@ -1,0 +1,119 @@
+[
+  {
+    "model": "Courses.schedule",
+    "pk": 1,
+    "fields": {
+      "day_of_the_week": "FRI",
+      "start_time": "13:00:00",
+      "duration": "02:00:00"
+    }
+  },
+  {
+    "model": "Courses.schedule",
+    "pk": 2,
+    "fields": {
+      "day_of_the_week": "MON",
+      "start_time": "10:30:00",
+      "duration": "02:00:00"
+    }
+  },
+  {
+    "model": "Courses.schedule",
+    "pk": 3,
+    "fields": {
+      "day_of_the_week": "MON",
+      "start_time": "11:25:00",
+      "duration": "01:20:00"
+    }
+  },
+  {
+    "model": "Courses.schedule",
+    "pk": 4,
+    "fields": {
+      "day_of_the_week": "SAT",
+      "start_time": "08:00:00",
+      "duration": "01:20:00"
+    }
+  },
+  {
+    "model": "Courses.schedule",
+    "pk": 5,
+    "fields": {
+      "day_of_the_week": "THU",
+      "start_time": "11:25:00",
+      "duration": "01:20:00"
+    }
+  },
+  {
+    "model": "Courses.schedule",
+    "pk": 6,
+    "fields": {
+      "day_of_the_week": "TUE",
+      "start_time": "08:00:00",
+      "duration": "02:00:00"
+    }
+  },
+  {
+    "model": "Courses.schedule",
+    "pk": 7,
+    "fields": {
+      "day_of_the_week": "TUE",
+      "start_time": "13:00:00",
+      "duration": "02:00:00"
+    }
+  },
+  {
+    "model": "Courses.schedule",
+    "pk": 8,
+    "fields": {
+      "day_of_the_week": "WED",
+      "start_time": "08:00:00",
+      "duration": "02:00:00"
+    }
+  },
+  {
+    "model": "Courses.schedule",
+    "pk": 9,
+    "fields": {
+      "day_of_the_week": "WED",
+      "start_time": "13:00:00",
+      "duration": "02:00:00"
+    }
+  },
+  {
+    "model": "Courses.schedule",
+    "pk": 10,
+    "fields": {
+      "day_of_the_week": "FRI",
+      "start_time": "08:00:00",
+      "duration": "02:00:00"
+    }
+  },
+  {
+    "model": "Courses.schedule",
+    "pk": 11,
+    "fields": {
+      "day_of_the_week": "TUE",
+      "start_time": "10:30:00",
+      "duration": "02:00:00"
+    }
+  },
+  {
+    "model": "Courses.schedule",
+    "pk": 12,
+    "fields": {
+      "day_of_the_week": "SAT",
+      "start_time": "13:00:00",
+      "duration": "02:00:00"
+    }
+  },
+  {
+    "model": "Courses.schedule",
+    "pk": 13,
+    "fields": {
+      "day_of_the_week": "WED",
+      "start_time": "11:25:00",
+      "duration": "01:20:00"
+    }
+  }
+]

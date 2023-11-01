@@ -1,0 +1,249 @@
+.panel > article {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 0px;
+}
+
+.panel > article h3 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-block-end: 4rem;
+}
+
+.panel > article h4  {
+  display: grid;
+  padding-top: 2rem;
+  border-top: 1px solid var(--gray-lighter);
+  margin-block-end: 2rem;
+}
+
+.panel > article h4 time {
+  padding-top: 1rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--gray-dark);
+}
+
+.panel > article .heading {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.panel > article .heading h3 {
+  color: var(--black-default);
+
+  font-weight: bold;
+  font-size: 2.6rem;
+  line-height: 2.6rem;
+}
+
+.panel > article .heading footer {
+  /* display: flex; */
+  font-weight: 700;
+  font-size: 2.2rem;
+  gap: 2rem;
+  margin-inline-start: auto;
+  text-align: right;
+  color: var(--gray-dark);
+}
+
+.panel > article .heading footer .due-date { 
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+.panel > article form .checkbox {
+  display: inline-block;
+}
+
+.panel > article form .checkbox label {
+  font-weight: 700;
+  font-size: 1.8rem;
+  padding-right: 2rem;
+}
+
+.panel > article form {
+  width: 100%;
+}
+
+.panel > article form > p {
+  margin-block-end: 3rem;
+}
+
+.panel > article form > p * {
+  display: block;
+}
+
+.panel > article form > p label {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.panel > article form > p input,
+.panel > article form > p textarea {
+  width: 100%;
+  padding: 1rem 2rem;
+
+  border: 1px solid var(--gray-lighter);
+  box-sizing: border-box;
+  border-radius: 6px;
+
+  background-color: var(--white-default);
+  font-family: var(--body-font-family);
+  font-size: 18px;
+}
+
+.panel > article form .grading > input {
+  width: 50%;
+  padding: 1rem 2rem;
+
+  border: 1px solid var(--gray-lighter);
+  box-sizing: border-box;
+  border-radius: 6px;
+
+  background-color: var(--white-default);
+  font-family: var(--body-font-family);
+  font-size: 18px;
+}
+
+.panel > article form .btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.panel > article form .btn-middle {
+  display: flex;
+  justify-content: center;
+  margin-block: 10rem;
+}
+
+.panel > article form .btn-delete {
+  width: 12rem;
+  height: 5rem;
+
+  margin-inline-start: 0rem;
+  border-radius: 6px;
+
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.8rem;
+  transition: background-color var(--hover-transition);
+  background-color: var(--alert-primary);
+  color: var(--white-default);
+  border: none;
+}
+
+.panel > article form .btn {
+  width: 12rem;
+  height: 5rem;
+
+  margin-inline-start: 2rem;
+  border-radius: 6px;
+
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.8rem;
+  transition: background-color var(--hover-transition);
+}
+
+.panel > article form .post {
+  background: var(--iu-primary-default);
+  border: none;
+  color: var(--white-default);
+}
+
+.panel > article form .post:hover {
+  background-color: var(--iu-primary-dark);
+}
+
+.panel > article form .cancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  color: var(--iu-primary-default);
+  border-color: var(--gray-lighter);
+}
+
+.panel > article form .cancel:hover {
+  background-color: var(--gray-lighter);
+}
+
+.panel > article form .btn-delete:hover {
+  background-color: #980B33;
+}
+
+.panel > article .description {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.panel > article .file a {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--iu-primary-default);
+}
+
+.panel > article .file {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--gray-lighter);
+}
+
+.panel > article .file a:hover {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--iu-primary-default);
+  text-decoration: underline;
+}
+
+.panel > article .grade {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.panel > article .grade h4 {
+  border-top: 0px;
+  padding-right: 2rem;
+}
+
+.panel > article .grading h4 {
+  border-top: 0px;
+  padding-right: 2rem;
+}
+
+.panel > article .grade .highlight {
+  font-weight: 700;
+  font-size: 3.2rem;
+  color: var(--black-default);
+}
+
+.panel > article .grade .highlight + p {
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: var(--gray-default);
+}
+
+.panel > article form button {
+  width: 12rem;
+  height: 5rem;
+
+  margin-inline-start: 2rem;
+  border-radius: 6px;
+
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.8rem;
+  transition: background-color var(--hover-transition);
+  background: var(--iu-primary-default);
+  border: none;
+  color: var(--white-default);
+}
+
+.panel > article form button:hover {
+  background-color: var(--iu-primary-dark);
+}

@@ -1,0 +1,28 @@
+{% extends 'Home/index.html' %}
+{% load static %}
+
+{% block title %}
+  <title>General Announcements All</title>
+{% endblock title %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{% static 'Home/announcement.css' %}">
+{% endblock %}
+
+{% block announcements-active %}active{% endblock %}
+
+{% block main-content %}
+  <article class="panel announcement general-information">
+    <h2>General Information</h2>
+    <div class="heading">
+      <h3>{{ general_announcement.obj.title }}</h3>
+      <time class="date-text" datetime="{{ general_announcement.obj.time_modified | date:"c" }}">
+        {{ general_announcement.obj.time_modified | date:"d/m/Y" }}
+      <div class="new-tag" {% if general_announcement.is_new == False %}style="visibility: hidden"{% endif %}>NEW</div>
+      </time>
+    </div>
+    <div class="body">
+      <p>{{ general_announcement.obj.content }}</p>
+    </div>
+  </article>
+{% endblock main-content %}

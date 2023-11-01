@@ -1,0 +1,54 @@
+{% extends 'Classwork/base-test.html' %}
+
+{% load static %}
+
+{% block title %}
+  <title>{{ lecturer_class.course.name }} - {{ lecturer_class.schedule }} New Assignment</title>
+{% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'User/upload-assignment.css' %}">
+  <link rel="stylesheet" href="{% static 'User/upload-announcement.css' %}">
+  <script src="{% static 'User/upload-content.js' %}" defer></script>
+{% endblock %}
+
+{% block panel-content %}
+<article>
+  <div class="heading">
+    <h3 class="title">New Test</h3>
+  </div>
+  <form action="." method = "POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <div>
+      <!-- {% if not new %}
+      <a href="{% url 'download-test-file' id class_id test_id %}">Download file</a>
+      {%endif%} -->
+      <!-- <p>
+        Check the "is quiz" field if this is a quiz taken on the website or leave it unchecked if this is a file upload assignment
+      </p> -->
+      {% if test.is_quiz %}
+      <a href="{% url 'edit-classwork-view' id class_id test_id%}">Change quiz questions</a>
+      {% endif %}
+      
+      <!-- <button type="submit">Save Test</button> -->
+      <div class="btn-container">
+        <!-- {% if not new %}
+        <form method='POST'>
+          {%csrf_token%}
+          <input class="btn-delete" type="Submit" value="Delete"/>
+        </form>
+        {%endif%} -->
+        <div class="right-buttons">
+        <input class="btn post" type="Submit" value="Post"/>
+        <a class="btn cancel" href="{% url 'lecturer-class-assignment-page' id class_id %}">
+          Cancel
+        </a>
+      </div>
+      
+    </div>
+    </form>
+</article>
+
+{% endblock %}

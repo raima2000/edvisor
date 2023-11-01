@@ -1,0 +1,53 @@
+{% extends 'Classwork/base-test.html'%}
+{% load static %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'Courses/class-grade.css' %}">
+{% endblock %}
+
+{%block panel-content%}
+<article>
+  {% for entry in submitted%}
+
+  <div class="heading">
+    <h3>
+      <a href="{% url 'view-student-test' id class_id entry.0.id%}">
+        {{entry.0.student_id.user_id.full_name}}
+      </a>
+      <p>
+        {{entry.0.student_id}}
+      </p>
+    </h3>
+    {% if entry.0.is_overdue %}
+    <p class="due-text">OVERDUE</p>
+    {% endif %}
+  </div>
+  <div class="status">
+    <p>SUBMITTED</p>
+    <p>{{entry.1}}</p>
+  </div>
+  <div class="grade">
+    {% if entry.0.grade != None %}
+    <p class="highlight">{{entry.0.grade}}</p>
+    {% else %}
+    <p class="highlight">-</p>
+    {%endif%}
+    <p>/100</p>
+  <div>
+    <!-- <p>Name: {{entry.0.student_id.user_id.full_name}}</p>
+    <p>Submit date: {{entry.1}}</p>
+    {% if entry.0.grade != None %}
+    <p>Grade: {{entry.0.grade}}</p>
+    {% else %}
+    <p>Ungraded</p>
+    {%endif%}
+    {% if entry.0.is_overdue %}
+    <h3>OVERDUE</h3>
+    {% endif %} -->
+    <!-- <a href="{% url 'view-student-test' id class_id entry.0.id%}">Check answers</a> -->
+  </div>
+  {% endfor %}
+</article>
+  
+{%endblock %}

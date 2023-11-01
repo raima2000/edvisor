@@ -1,0 +1,68 @@
+{% extends 'Home/index.html' %}
+{% load static %}
+
+{% block title %}
+  <title>Edit Course Registration</title>
+{% endblock title %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{% static 'User/class-registration.css' %}">
+  <script defer src="{% static 'User/class-registration.js' %}"></script>
+{% endblock %}
+
+{% block registration-active %}active{% endblock %}
+
+{% block main-content %}
+<article class="panel registration">
+  <h2>Class Registration</h2>
+  <div class="search">
+    <label for="search">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.4996 11H11.7096L11.4296 10.73C12.6296 9.33002 13.2496 7.42002 12.9096 5.39002C12.4396 2.61002 10.1196 0.390015 7.31965 0.0500152C3.08965 -0.469985 -0.470351 3.09001 0.049649 7.32001C0.389649 10.12 2.60965 12.44 5.38965 12.91C7.41965 13.25 9.32965 12.63 10.7296 11.43L10.9996 11.71V12.5L15.2496 16.75C15.6596 17.16 16.3296 17.16 16.7396 16.75C17.1496 16.34 17.1496 15.67 16.7396 15.26L12.4996 11ZM6.49965 11C4.00965 11 1.99965 8.99002 1.99965 6.50002C1.99965 4.01002 4.00965 2.00002 6.49965 2.00002C8.98965 2.00002 10.9996 4.01002 10.9996 6.50002C10.9996 8.99002 8.98965 11 6.49965 11Z"
+              fill="currentColor"/>
+      </svg>
+    </label>
+    <input type="search" id="search" placeholder="Search for courses..">
+  </div>
+  <div>
+    <h2>Deadline: {{ deadline }}</h2>
+  </div>
+  <form method="POST" action="{% url 'edit-class-registration-page' student.id %}" enctype="multipart/form-data">
+    {% csrf_token %}
+      <div class="scrollable">
+        <table id="class-table" class="class-table">
+          <thead>
+          <tr>
+            <th>Select</th>
+            <th class="subject-col">Subject name</th>
+            <th>Class ID</th>
+            <th>Semester</th>
+            <th>Day</th>
+            <th>Start time</th>
+            <th>Duration</th>
+            <th>Instructor</th>
+          </tr>
+          </thead>
+          <tbody>
+            {% for class in classes %}
+              <tr>
+                <td><input type="checkbox" name="selection" value="{{ class.id }}" {% if is_past_deadline %}disabled{% else %}checked="checked"{% endif %}></td>
+                <th>{{ class.course.name }}</th>
+                <th>{{ class.id }}</th>
+                <th>{{ class.sem_year }}</th>
+                <th>{{ class.schedule.day_of_the_week }}</th>
+                <th>{{ class.schedule.start_time }}</th>
+                <th>{{ class.schedule.duration }}</th>
+                <th>{{ class.lecturer.user_id.full_name }}</th>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% if not is_past_deadline %}
+        <button id="submit" class="btn submit">Submit</button>
+      {% elif is_past_deadline %}
+      {% endif %}
+  </form>
+</article>
+{% endblock %}

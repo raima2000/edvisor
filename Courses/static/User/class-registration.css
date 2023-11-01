@@ -1,0 +1,152 @@
+.registration h2 {
+  grid-column-end: span 1;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  color: var(--gray-dark);
+  text-align: unset;
+  padding-bottom: 1.5rem;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.registration .search {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.registration .search label {
+  position: absolute;
+  height: 1.8rem;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+}
+
+.registration .search input {
+  width: 42rem;
+  padding: 1.75rem 2rem 1.75rem 4.8rem;
+  font-size: 1.6rem;
+
+  border-radius: 4px;
+  border: 1px solid var(--gray-lighter);
+  background-color: var(--white-default);
+  color: var(--body-color);
+}
+
+.registration .search input::placeholder {
+  color: var(--gray-default);
+}
+
+.registration .btn {
+  padding: 1.55rem 2.55rem;
+  margin-inline-end: 1rem;
+
+  font-size: 1.8rem;
+
+  border-width: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+/* Submit button */
+.registration .btn.submit {
+  font-family: var(--body-font-family);
+  font-weight: bold;
+  color: var(--white-default-text);
+  background-color: var(--iu-primary-default);
+  transition: background-color var(--hover-transition);
+}
+
+.registration .btn.submit:hover {
+  background-color: var(--iu-primary-dark);
+}
+
+/* Edit button */
+.registration .btn-edit {
+  padding: 1.55rem 2.55rem;
+  margin-inline-end: 1rem;
+  font-size: 1.8rem;
+  border-width: 0;
+  border: 1px solid var(--gray-lighter);
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--body-font-family);
+  font-weight: bold;
+  color: var(--iu-primary-default-text);
+  background-color: var(--white-default);
+  /* background-color: var(--iu-primary-default); */
+  transition: background-color var(--hover-transition);
+}
+
+.registration .btn-edit:hover {
+  background-color: var(--gray-lighter);
+}
+
+/* Registration Table */
+.scrollable {
+  position: relative;
+
+  max-height: 51rem;
+  margin-bottom: 4rem;
+
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-default) transparent;
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: var(--gray-default);
+}
+
+.scrollable thead {
+  position: sticky;
+  top: 0;
+}
+
+.class-table {
+  width: 100%;
+
+  font-size: 1.4rem;
+  text-align: center;
+
+  border-spacing: 0;
+}
+
+.class-table .subject-col {
+  width: 30%;
+}
+
+.class-table thead {
+  color: var(--white-default-text);
+  font-weight: bold;
+
+  background-color: var(--iu-secondary-default);
+}
+
+.class-table td, .class-table th {
+  padding-block: 1.5rem;
+  padding-inline: 0.5rem;
+}
+
+.class-table tbody tr td:nth-child(2) {
+  font-weight: 600;
+  text-align: left;
+}
+
+.class-table tbody tr:nth-child(2n + 1) {
+  background-color: var(--background-default);
+}
+
+.class-table tbody tr {
+  transition: all 0.1s ease;
+}
+
+.class-table tbody tr:hover {
+  background-color: var(--iu-secondary-light);
+}

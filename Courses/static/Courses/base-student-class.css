@@ -1,0 +1,98 @@
+.panel > * {
+  margin-block-end: 2rem;
+  border-bottom: 1px solid var(--gray-lighter);
+}
+
+.panel > *:last-child {
+  margin-block-end: 0;
+  border-bottom: none;
+}
+
+/* Panel header */
+.panel > header {
+  padding-block-end: 1rem;
+}
+
+.panel > header h2 {
+  margin-block-end: 1rem;
+
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  color: var(--gray-dark);
+
+  text-align: unset;
+  word-wrap: anywhere;
+}
+
+.panel > header p {
+  margin-block-end: 2rem;
+  color: var(--gray-dark);
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.panel > header .flex-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: var(--gray-dark);
+}
+
+.panel > header .tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+
+  color: var(--gray-dark);
+  border-radius: 6px;
+  transition: background-color var(--hover-transition);
+}
+
+.panel > header .tab:hover {
+  background-color: var(--gray-lighter);
+}
+
+.panel > header .active {
+  background: var(--gray-lighter);
+}
+
+/* Upload Button */
+.panel .upload-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+
+  padding: 1.3rem 2.1rem;
+
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 1.9rem;
+
+  color: var(--white-default-text);
+  background-color: var(--iu-primary-default);
+
+  border-radius: 6px;
+  transition: background-color var(--hover-transition);
+}
+
+.panel .upload-button > svg {
+  width: 2.4rem;
+  margin-inline-end: 1rem;
+}
+
+.panel .upload-button:hover {
+  background-color: var(--iu-primary-dark);
+}

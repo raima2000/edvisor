@@ -1,0 +1,71 @@
+{% extends 'Home/index.html' %}
+{% load static %}
+
+{% block title %}
+    <title>General Announcements</title>
+{% endblock title %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{% static 'Home/announcement.css' %}">
+{% endblock %}
+
+{% block announcements-active %}active{% endblock %}
+
+{% block main-content %}
+    <article class="panel announcement general-information">
+        <h2>General Information</h2>
+        {% for general_announcement in general_announcements %}
+        <article style="--order: {{ forloop.counter }}">
+            <a class="heading" href="{% if user.user_type == 'Student' %}{% url 'student-general-announcement-page' user.student.id general_announcement.obj.id %}
+                                          {% elif user.user_type == 'Lecturer' %}{% url 'lecturer-general-announcement-page' user.lecturer.id general_announcement.obj.id %}
+                                          {% elif not user.is_authenticated %}{% url 'guest-announcement-viewpage' general_announcement.obj.id %}
+                                          {% endif %}"><h3>{{ general_announcement.obj.title }}</h3>
+            </a>
+            <footer>
+                <div class="new-tag" {% if general_announcement.is_new == False %}style="visibility: hidden"{% endif %}>NEW</div>
+                <time datetime="{{ general_announcement.obj.time_modified | date:"c" }}">{{ general_announcement.obj.time_modified | date:"d/m/Y" }}</time>
+            </footer>
+        </article>
+        {% endfor %}
+        <footer>
+
+            <a class="view-all-btn" href="{% if user.user_type == 'Student' %}{% url 'student-general-announcement-all' user.student.id %}
+                                          {% elif user.user_type == 'Lecturer' %}{% url 'lecturer-general-announcement-all' user.lecturer.id %}
+                                          {% elif not user.is_authenticated %}{% url 'guest-announcement-all' %}
+                                          {% endif %}">View All</a>
+        </footer>
+    </article>
+
+    {% if user.is_authenticated %}
+    <article class="panel announcement courses-announcements">
+        <h2>Class Announcements</h2>
+        {% for class_announcement in classes_announcements %}
+            {% if class_announcement.obj.is_displayable or user.user_type == 'Lecturer' and not class_announcement.obj.is_displayable %}
+            <article style="--order: {{ forloop.counter }}">
+                <div class="heading">
+                    <a href="{% if user.user_type == 'Student' %}{% url 'student-class-announcement-page' user.student.id class_announcement.obj.class_id.id %}
+                                          {% elif user.user_type == 'Lecturer' %}{% url 'lecturer-class-announcement-page' user.lecturer.id class_announcement.obj.class_id.id %}
+                                          {% elif not user.is_authenticated %}{% url 'guest-announcement-page' %}
+                                          {% endif %}"><p>{{ class_announcement.obj.class_id }}</p></a>
+                    <a class="heading" href="{% if user.user_type == 'Student' %}{% url 'student-class-announcement-page' user.student.id class_announcement.obj.class_id.id %}#{{ class_announcement.obj.id }}
+                                              {% elif user.user_type == 'Lecturer' %}{% url 'lecturer-class-announcement-page' user.lecturer.id class_announcement.obj.class_id.id %}#{{ class_announcement.obj.id }}
+                                              {% elif not user.is_authenticated %}{% url 'guest-announcement-page' %}
+                                              {% endif %}"><h3>{{ class_announcement.obj.title }}</h3></a>
+                </div>
+                <footer>
+                    <div class="new-tag" {% if class_announcement.is_new == False %}style="visibility: hidden"{% endif %}>NEW</div>
+                    <time datetime="{{ class_announcement.obj.time_modified | date:"c" }}">{{ class_announcement.obj.time_modified | date:"d/m/Y" }}</time>
+                </footer>
+            </article>
+            {% endif %}
+        {% endfor %}
+       <footer>
+            <a class="view-all-btn" href="{% if user.user_type == 'Student' %}{% url 'student-class-announcement-all' user.student.id %}
+                                          {% elif user.user_type == 'Lecturer' %}{% url 'lecturer-class-announcement-all' user.lecturer.id %}
+                                          {% elif not user.is_authenticated %}{% url 'guest-announcement-page' %}
+                                          {% endif %}">View All</a>
+        </footer>
+    </article>
+    {% endif %}
+
+{% endblock %}

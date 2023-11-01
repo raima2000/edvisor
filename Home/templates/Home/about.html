@@ -1,0 +1,64 @@
+{% extends 'Home/index.html' %}
+{% load static %}
+
+{% block title %}
+  <title>About</title>
+{% endblock title %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{% static 'Home/announcement.css' %}">
+{% endblock %}
+
+{% block announcements-active %}active{% endblock %}
+
+{% block main-content %}
+    <article class="panel announcement general-information">
+        <h2>About IU</h2>
+            <p>     International University has obtained the decision for
+              establishment signed by the Prime Minister on May 12, 2003.
+              International University – VNU is the first international
+              university of Vietnam, and is a public university with its legal
+              status, its own authorized seal and account. It is fully empowered
+              to award all degrees from undergraduate to post graduate levels.
+              Its internationality is reflected in international academic
+              environment of IU – VNU as a whole, including all degree programs,
+              teaching staff, languages of instruction, academic and research
+              infrastructure. Its publicity is reflected in the long-term
+              support from the government and other funding agencies and
+              organizations at all levels – from local national to regional and
+              international. <br>
+              <br>
+                  By the year 2020, the Vietnam National University HCMC –
+                  International University will become a top research-oriented
+                  university of Vietnam, which has strong collaborations with
+                  world wide prestigious universities, institutes, industries,
+                  local provinces and society.
+                  <br>
+                  <br>
+                  Missions: <br>
+                  -Offering high-quality graduate and undergraduate education in multi-disciplinary. All educational programs are accredited/assessed in accordance with regional and international standards. <br>
+                  -Offering excellent research including basic and applied research to meet the needs of industry, local provinces and society. <br>
+                  -Taking the pioneer role in  Vietnam by practicing management excellence, inspiring and assisting other VNU members in the advancement toward the development of Vietnam National University – HCMC as a whole. <br>
+            </p>
+    </article>
+    <article class="panel announcement general-information">
+        <h2>About This E-Learning Platform</h2>
+            <p>
+              This is an e-learning platform designed with the sole purpose of
+              assisting in students' learning endeavor and lecturers' managerial
+              duties. Due to situation regarding the overall state of the world,
+              there has been a shift in learning methodology, namely the demand
+              for online-oriented teaching utilities. This platform was
+              conceptualized in 20/9/2021 as part of the Software Engineering
+              course's project. The development team consists of Nguyen Anh
+              Khoa, Do Quang Minh, Ha Minh Khoa, Dinh
+              Bao Duy, Ung Thu Ha and Huynh Hoc Lam.
+            </p>
+    <a href="{% url 'talents' %}">
+      <svg width="32" height="32" focusable="false" data-prefix="fas" data-icon="egg" role="img"
+           xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+        <path fill="currentColor" d="M192 0C86 0 0 214 0 320s86 192 192 192 192-86 192-192S298 0 192 0z"></path>
+      </svg>
+    </a>
+  </article>
+{% endblock %}

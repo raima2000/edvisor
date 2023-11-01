@@ -1,0 +1,128 @@
+@import url(base.css);
+
+article.panel > * {
+  margin-bottom: 3rem;
+}
+
+article.panel h2 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  color: var(--gray-dark);
+  text-align: unset;
+
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+article.panel > footer {
+  text-align: right;
+}
+
+article.panel > footer .view-all-btn {
+  padding: 1rem;
+  color: var(--iu-secondary-default);
+  font-weight: bold;
+  margin: 0;
+}
+
+article.panel > footer .view-all-btn:hover {
+  color: var(--iu-secondary-dark);
+}
+
+
+/* Announcement List */
+.announcement > article {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.announcement > article .heading {
+  width: 76.6%;
+}
+
+.announcement > article .heading h3 {
+  color: var(--iu-primary-default-text);
+  font-size: 2.4rem;
+  font-weight: 500;
+  transition: color var(--hover-transition);
+}
+
+.announcement > article .heading h3:hover {
+  color: var(--iu-primary-dark-text);
+}
+
+.announcement > article footer {
+  display: flex;
+  gap: 2rem;
+  width: 16rem;
+  padding-block: 1rem;
+  margin-inline-start: auto;
+
+  color: var(--gray-default);
+  text-align: right;
+}
+
+.announcement > article {
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: var(--riseUpAnimation);
+  animation-delay: calc(var(--order) * 100ms + 0.3s);
+}
+
+
+/* General information panel */
+.date-text {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Courses Announcements panel */
+.courses-announcements > article .heading p {
+  margin-bottom: 0.4rem;
+  color: var(--gray-default);
+  font-weight: 500;
+}
+
+.courses-announcements > article .heading p:hover {
+  color: var(--gray-dark);
+}
+
+.courses-announcements > article .heading h3 {
+  color: var(--iu-primary-default-text);
+  font-weight: 700;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+}
+
+.courses-announcements > article .heading h3:hover {
+  color: var(--iu-primary-dark-text);
+}
+
+.general-information .search, .courses-announcements .search {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.general-information .search label, .courses-announcements .search label {
+  position: absolute;
+  height: 1.8rem;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+}
+
+.general-information .search input, .courses-announcements .search input {
+  width: 42rem;
+  padding: 1.75rem 2rem 1.75rem 4.8rem;
+  font-size: 1.6rem;
+
+  border-radius: 4px;
+  border: 1px solid var(--gray-lighter);
+}
+
+.general-information .search input::placeholder, .courses-announcements .search input::placeholder {
+  color: var(--gray-default);
+}

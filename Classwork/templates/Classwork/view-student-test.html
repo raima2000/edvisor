@@ -1,0 +1,48 @@
+{% extends 'Classwork/base-test.html'%}
+{% load static %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'User/upload-assignment.css' %}">
+  <link rel="stylesheet" href="{% static 'Courses/class-announcement.css' %}">
+  <script src="{% static 'User/upload-content.js' %}" defer></script>
+{% endblock %}
+
+{%block panel-content%}
+<article>
+  {% if test.test_id.is_quiz %}
+  {% for answer in test.studentanswer_set.all %}
+  <h2>{{answer.question}}</h2>
+  {%if answer.question.is_written%}
+  <p>{{answer.written_ans}}</p>
+  {%else%}
+  <ul>
+    {%for a in answer.choice_ans.all%}
+    <li>{{a.option}}</li>
+    {%endfor%}
+  </ul>
+  {%endif%}
+  {%endfor%}
+  <hr>
+  <div>
+    <p>Correct multiple choice answers: {{right}}</p>
+  </div>
+{% else %}
+<p class="file">
+  <a href="{% url 'download-student-file' id class_id test.id %}">
+      Download submission file
+  </a>
+</p>
+{% endif %}
+<form action="" method="POST">
+  {%csrf_token%}
+  <div class="grading">
+    <h4 for="grade">Grade:</h4>
+    <input type="number" name="grade" id="" step=".01" value="{{grade}}">
+    <button type="submit">Grade</button>
+  </div>
+  
+</form>
+</article>
+
+{%endblock %}

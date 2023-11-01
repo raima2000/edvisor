@@ -1,0 +1,21 @@
+.new-tag {
+  height: fit-content;
+  width: fit-content;
+  padding-inline: 1rem;
+
+  font-weight: bold;
+  color: var(--white-default-text);
+  background-color: var(--success-primary);
+  border-radius: 6px;
+}
+
+body {
+  --riseUpAnimation: riseUpKeyframes 0.8s ease forwards;
+}
+
+@keyframes riseUpKeyframes {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

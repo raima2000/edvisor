@@ -1,0 +1,54 @@
+{% extends 'Classwork/base-test.html' %}
+{% load static %}
+
+{% block stylesheets %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'User/base-upload.css' %}">
+<link rel="stylesheet" href="{% static 'User/upload-announcement.css' %}">
+<script src="{% static 'User/upload-content.js' %}" defer></script>
+{% endblock %}
+
+{% block panel-content %}
+<article>
+    <div class="heading">
+        <h3>TEST NAME: {{test.test_name}}</h3>
+    </div>
+    
+    <p>{{test.test_description}}</p>
+    {% if not test.is_quiz %}
+    <p><a href="{% url 'download-test-file' id class_id test.id%}"></a>Download test file</p>
+    {% endif %}
+    {% if not done %}
+    <form method="POST" action="#">
+        {%csrf_token%}
+        {%for question in test.question_set.all %}
+        <p>{{forloop.counter}}. {{question.question}}</p>
+        {%if question.is_written%}
+        <input name="{{question.id}}" type="text">
+        {%else%}
+        {%for option in question.multiplechoiceoption_set.all%}
+        <div class="checkbox">
+            <input type="checkbox" value="{{option.id}}" name="{{question.id}}">
+            <label for="{{option.id}}">{{option.option}}</label>
+        </div>
+
+        {%endfor%}
+        {%endif%}
+        {%endfor%}
+        <hr>
+        <div><input type="submit" value='Submit test'></div>
+    </form>
+    {% else %}
+    <div>
+        <p>You have already done this test</p>
+        <hr>
+        {%if grade%}
+        <p>Your grade is {{grade}}</p>
+        {%else%}
+        <p>Test is ungraded</p>
+        {%endif%}
+        <a href="{% url 'student-class-assignment-page' id class_id%}">Return</a>
+    </div>
+    {% endif %}
+</article>
+{% endblock %}

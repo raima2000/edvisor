@@ -1,0 +1,18 @@
+Script:
+So having a clear cut plan for our project, we continue to the implementation step of actually coding our vision of the webapp.
+Through our research the most appropriate system to utilize is using the Django framework. Đọc trong slide.
+Furthermore, as for a database system for backend, we use ....
+For the next part we will go over the test cases which also includes the demonstration of our product.
+
+Passwords:
+Lecturer:
+loan.nguyen@lecturer.com
+loannguyen
+LoanNguyen123
+LoanNguyen321
+
+student:
+duy.dinh@student.com
+duydinh
+
+

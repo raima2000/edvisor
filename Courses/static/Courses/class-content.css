@@ -1,0 +1,46 @@
+/* Class Content Tab */
+
+.panel > article {
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: var(--riseUpAnimation);
+  animation-delay: calc(var(--order) * 100ms + 0.3s);
+}
+
+.panel > article .heading {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.panel > article .heading .icon {
+  width: 3rem;
+  height: min-content;
+  margin-inline-end: 1rem;
+}
+
+.panel > article .heading h3 {
+  margin-top: 0.3rem;
+  color: var(--black-default);
+  font-weight: bold;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+}
+
+.panel > article .heading footer {
+  display: flex;
+  gap: 2rem;
+  margin-inline-start: auto;
+  text-align: right;
+  color: var(--gray-default);
+}
+
+.panel > article .content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.panel > article .content .edit {
+  display: flex;
+  margin-inline-start: auto;
+}

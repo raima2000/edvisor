@@ -1,0 +1,51 @@
+Give everyone the Production Link
+Demo HomePage (Guest)
+Demo Darkmode
+Demo Responsive
+Demo Login (loan.nguyen@lecturer.com)
+Demo Forgot password
+    Notice That there currently no Password verification for this Page.
+Demo Change password
+    This Page on the other hand have password verification.
+Demo HomePage (Logged in)
+    Demo URL vulnerabilities Security
+    Mention There is New Tags for Newly posted and edited posts
+    Demo Hyperlink - at class announcements (Click on both Announcements and Courses)
+    Demo View all search (Demo searching)
+
+Lecturer:
+My Classes Full Gallery
+My Classes Shortcuts on sidebar
+
+Announcements
+    Edit    (Will have a New Tag)
+    Upload  (Will have a New Tag)
+    Delete
+Content
+    Edit
+    Upload
+Assignments
+    Upload
+    Edit
+Demo Students' Feedback
+
+Student:
+Demo Home Page
+Demo Schedule (Notice that Pick a week is under development)
+Demo Registration (Demo Conflicting Course prevention)
+    Demo Course search
+
+Demo Class
+Demo Do assignments
+Demo Feedback
+
+Lecturer:
+    Grade (Cannot enter character, Can re-graded a student's exam)
+    Student Performance
+
+Student:
+    Receive new Grade
+    Update to Student Performance
+
+Demo Footer (About Us, Links,...)
+Signature (Để ở trang này cho mọi người ngắm, rồi Đợi Q&A)

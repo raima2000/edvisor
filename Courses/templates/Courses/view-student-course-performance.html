@@ -1,0 +1,52 @@
+{% extends 'Courses/base-class-course.html' %}
+{% load static %}
+
+{% block title %}
+<title>{{ class }} Student Performance</title>
+{% endblock title %}
+
+{% block stylesheets %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'Courses/class-grade.css' %}">
+{% endblock %}
+
+{% block student-view-self-course-performance-active %}active{% endblock %}
+
+{% block panel-content %}
+
+<head>
+  <div class="info">
+    <h3>{{ student.user_id.full_name }}</h3>
+    <p>Student ID: {{ student.id }}</p>
+    <p>Major: {{ student.major_id }}</p>
+    <p>{{ student.user_id.email }}</p>
+  </div>
+</head>
+
+{% for entry in tests %}
+<article>
+  <div class="heading">
+    <h3>{{entry.test_id.test_name}}</h3>
+    <p class="due-text">{{ entry.test_id.end_time }}</p>
+  </div>
+  <div class="status">
+    {% if entry.is_overdue%}
+    <p>SUBMITTED (LATE)</p>
+    {% else %}
+    <p>SUBMITTED</p>
+    {% endif %}
+    <p>{{entry.submit_time}}</p>
+  </div>
+  <div class="grade">
+    {% if entry.grade %}
+    <p class="highlight">{{entry.grade}}</p>
+    {% else%}
+    <p class="highlight">-</p>
+    {% endif %}
+    <p>/100</p>
+  </div>
+</article>
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'Courses/base-class-course.html' %}
+{% load static %}
+
+{% block title %}
+  <title>{{ lecturer_class.course.name }} - {{ lecturer_class.schedule }} Class Feedback</title>
+{% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'Courses/class-announcement.css' %}">
+{% endblock %}
+
+{% block class-feedback-active %}active{% endblock %}
+
+{% block panel-content %}
+  {% for post in posts %}
+    <article>
+      <div class="heading">
+        <a class="heading" href=""><h3>Feedback #{{ forloop.revcounter }}</h3></a>
+        <footer>
+            <time>{{ post.time_created.date }}<br>{{ post.time_created.time | time:"g:iA" }}</time>
+        </footer>
+      </div>
+      <p>{{ post.content | linebreaks }}</p>
+    </article>
+  {% endfor %}
+{% endblock %}

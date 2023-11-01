@@ -1,0 +1,89 @@
+main {
+  background-color: var(--background-default);
+  padding: 2rem;
+  padding-inline: 6vw;
+  max-width: 100vw;
+}
+
+section.panel {
+  width: min(100%, 144rem);
+  min-height: 50rem;
+  background-color: var(--white-default);
+  border-radius: 6px;
+  padding: 2rem 3rem;
+}
+
+section.panel h2 {
+  font-weight: bold;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  color: var(--gray-dark);
+  text-align: unset;
+
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.change-password {
+  margin-top: 3rem;
+}
+
+.change-password-btn {
+  padding-block: 1.5rem;
+  padding-inline: 5rem;
+  border-radius: 6px;
+  border: 1px solid;
+  color: var(--iu-primary-default-text);
+  border-color: var(--gray-light);
+  font-weight: bold;
+  margin: 0;
+  transition: background-color var(--hover-transition);
+}
+
+.change-password-btn:hover {
+  background-color: var(--gray-lighter);
+}
+
+.my-avatar {
+  width: 163px;
+  height: 163px;
+  margin-right: 112px;
+
+}
+
+/* Information */
+.container {
+  margin-left: 142px;
+  margin-right: 142px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.information .container {
+  display: flex;
+  text-align: left;
+}
+
+td, th {
+  padding-bottom: 20px;
+  vertical-align: bottom;
+}
+
+th {
+  color: var(--gray-default);
+  width: 183px;
+  font-weight: 500;
+
+}
+
+td {
+  font-weight: 500;
+  font-size: larger;
+}
+
+.information > section {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}

@@ -1,0 +1,109 @@
+@import url(base.css);
+
+article.panel h2 {
+  grid-column-end: span 1;
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  color: var(--gray-dark);
+  text-align: unset;
+
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+article.panel .courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr));
+  gap: 2rem;
+}
+
+article.panel .card {
+  --hover-transition: 0.25s ease-out;
+  --spacing: 1rem;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-height: 25rem;
+  background-color: var(--white-default);
+  border-radius: 6px;
+  border: 1px solid var(--gray-lighter);
+}
+
+article.panel .card .cover {
+  border-radius: 6px 6px 0 0;
+  object-fit: cover;
+  height: 17.5rem;
+
+  filter: blur(0px) brightness(50%);
+  transition: filter var(--hover-transition);
+}
+
+article.panel .card:hover .cover {
+  filter: blur(0) brightness(30%);
+}
+
+article.panel .card .teacher-profile {
+  position: absolute;
+  top: var(--spacing);
+  left: var(--spacing);
+  display: flex;
+  align-items: center;
+  color: var(--white-default-text);
+  cursor: pointer;
+}
+
+article.panel .card .teacher-profile img {
+  width: 4.2rem;
+  height: 4.2rem;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+article.panel .card .teacher-profile p {
+  margin: 0;
+  margin-inline-start: var(--spacing);
+
+  font-size: 1.6rem;
+  white-space: nowrap;
+}
+
+article.panel .card h3 {
+  padding: 3rem var(--spacing);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+  text-align: center;
+
+  color: var(--gray-dark);
+}
+
+article.panel .card {
+  opacity: 0;
+  animation: riseUpAnimation 8s ease forwards;
+  animation-delay: calc(var(--order) * 200ms);
+}
+
+@keyframes riseUpAnimation {
+  20% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+
+  30%, 100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+  article.panel .courses-grid {
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,105 @@
+.panel > article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.panel > article h3 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-block-end: 4rem;
+}
+
+.panel > article form {
+  width: 70%;
+}
+
+.panel > article form > p {
+  margin-block-end: 3rem;
+}
+
+.panel > article form > p * {
+  display: block;
+}
+
+.panel > article form > p label {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.panel > article form > p input,
+.panel > article form > p textarea {
+  width: 100%;
+  padding: 1rem 2rem;
+
+  border: 1px solid var(--gray-lighter);
+  box-sizing: border-box;
+  border-radius: 6px;
+
+  background-color: var(--white-default);
+  font-family: var(--body-font-family);
+  font-size: 18px;
+}
+
+.panel > article form .btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.panel > article form .btn-delete {
+  width: 12rem;
+  height: 5rem;
+
+  margin-inline-start: 0rem;
+  border-radius: 6px;
+
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.8rem;
+  transition: background-color var(--hover-transition);
+  background-color: var(--alert-primary);
+  color: var(--white-default-text);
+  border: none;
+}
+
+.panel > article form .btn {
+  width: 12rem;
+  height: 5rem;
+
+  margin-inline-start: 2rem;
+  border-radius: 6px;
+
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.8rem;
+  transition: background-color var(--hover-transition);
+}
+
+.panel > article form .post {
+  background: var(--iu-primary-default);
+  border: none;
+  color: var(--white-default-text);
+}
+
+.panel > article form .post:hover {
+  background-color: var(--iu-primary-dark);
+}
+
+.panel > article form .cancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  color: var(--iu-primary-default-text);
+  border-color: var(--gray-lighter);
+}
+
+.panel > article form .cancel:hover {
+  background-color: var(--gray-lighter);
+}
+
+.panel > article form .btn-delete:hover {
+  background-color: #980B33;
+}

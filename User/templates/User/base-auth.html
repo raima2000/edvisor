@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block title %}
+    <title>Index</title>
+  {% endblock title %}
+
+  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+  <link rel="stylesheet" href="{% static 'Home/base.css' %}">
+  <link rel="stylesheet" href="{% static 'User/base-auth.css' %}">
+
+  {% block stylesheets %}{% endblock stylesheets %}
+</head>
+
+<body>
+<div id="background"><img src="{% static 'images/signin-background-image-png.png' %}"></div>
+<div class="mainpanel">
+  <div class="innerpanel">
+    <div class="part1">
+      {% block inner-panel-1 %}
+      {% endblock inner-panel-1 %}
+    </div>
+    <div class="part2">
+      {% block inner-panel-2 %}
+      {% endblock inner-panel-2 %}
+    </div>
+  </div>
+</div>
+</body>
+</html>
+

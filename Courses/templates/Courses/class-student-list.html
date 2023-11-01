@@ -1,0 +1,54 @@
+{% extends 'Courses/base-class-course.html' %}
+{% load static %}
+
+{% block title %}
+<title>{{ class }} Student List</title>
+{% endblock title %}
+
+{% block stylesheets %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'Courses/class-student-list.css' %}">
+{% endblock %}
+
+{% block class-view-student-list-active %}active{% endblock %}
+
+{% block panel-content %}
+<article class="header">
+  <div class="number">
+    <p></p>
+  </div>
+  <div class="name">
+    <h3>Student Name</h3>
+  </div>
+  <div class="id">
+    <h3>Student ID</h3>
+  </div>
+  <div class="email">
+    <h3>Student Email</h3>
+  </div>
+</article>
+
+{% for student in student_list %}
+    <a class=student href="{% url 'lecturer-view-student-course-performance' lecturer.id lecturer_class.id student.id %}">
+      <article>
+        <div class="number">
+          <p>{{ forloop.counter }}</p>
+        </div>
+
+        <div class="name">
+          <p>{{ student.user_id.full_name }}</p>
+        </div>
+        <div class="id">
+          <p>{{ student.id }}</p>
+        </div>
+        <div class="email">
+          <p>{{ student.user_id.email }}</p>
+        </div>
+      </article>
+    </a>
+  {% endfor %}
+
+{% endblock %}
+
+
+

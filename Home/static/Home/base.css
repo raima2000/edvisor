@@ -1,0 +1,272 @@
+@import url("../fonts/SVN-Gilroy-font-face.css");
+
+/* Custom properties/variables  */
+
+:root {
+  --white-default: #ffffff;
+  --white-default-text: #ffffff;
+  --black-default: #000000;
+  --background-default: #eaeef0;
+  --gray-lighter: #dce2e4;
+  --gray-light: #bac5ca;
+  --gray-light-text: #bac5ca;
+  --gray-default: #6a818a;
+  --gray-dark: #3e4b51;
+  --alert-primary: #ef255d;
+  --alert-secondary: #fdecf1;
+  --success-primary: #1ac687;
+  --success-secondary: #e2fcf2;
+  --iu-primary-default: #2e3191;
+  --iu-primary-default-text: #2e3191;
+  --iu-primary-dark: #1d1f5d;
+  --iu-primary-dark-text: #1d1f5d;
+  --iu-secondary-light: #dbf1fa;
+  --iu-secondary-default: #1c9acc;
+  --iu-secondary-dark: #115f7e;
+
+  --body-font-family: SVN-Gilroy, serif;
+  --body-font-size: 1.6rem;
+  --body-font-weight: 400;
+  --body-line-height: 1.5;
+  --body-color: #000810;
+  --body-bg: var(--white-default);
+
+  --hover-transition: 0.25s ease-out;
+}
+
+.dark {
+  --white-default: #181a1b;
+  --white-default-text: #e8e6e3;
+  --black-default: #e8e6e3;
+  --background-default: #1e262a;
+  --gray-lighter: #393d40;
+  --gray-light: #414749;
+  --gray-light-text: #c1bcb4;
+  --gray-default: #9b9285;
+  --gray-dark: #bbb5ac;
+  --alert-primary: #f0376a;
+  --alert-secondary: #e8e6e3;
+  --success-primary: #159e6c;
+  --success-secondary: #07402f;
+  --iu-primary-default: #252774;
+  --iu-primary-default-text: #81a2d7;
+  --iu-primary-dark: #17194a;
+  --iu-primary-dark-text: #a0b9e1;
+  --iu-secondary-light: #093242;
+  --iu-secondary-default: #167ba3;
+  --iu-secondary-dark: #7acced;
+
+  --body-color: #e3e1dd;
+}
+
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* box-sizing and font sizing */
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-padding-top: 10rem;
+
+  /* Set font size for easy rem calculations
+  * default document font size = 16px, 1rem = 16px, 100% = 16px
+  * (100% / 16px) * 10px = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
+  font-size: 62.5%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+  html {
+    font-size: 58%;
+  }
+}
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+  html {
+    font-size: 55%;
+  }
+}
+
+/* Base styles */
+body {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size); /* 16px */
+  font-weight: var(--body-font-weight);
+  line-height: var(--body-line-height);
+  color: var(--body-color);
+  background-color: var(--body-bg);
+}
+
+button {
+  font-family: var(--body-font-family);
+}
+
+hr {
+  margin: 1.6rem 0;
+  color: inherit;
+  background-color: currentColor;
+  border: 0;
+  opacity: 0.25;
+}
+
+hr:not([size]) {
+  height: 1px;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+  text-align: center;
+  /* font-family */
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin-block: 0;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1,
+.h1 {
+  font-size: calc(2.2rem + 1.5vw);
+}
+
+@media (min-width: 1200px) {
+  h1,
+  .h1 {
+    font-size: 4rem;
+  }
+}
+
+h2,
+.h2 {
+  font-size: calc(2.12rem + 0.9vw);
+}
+
+@media (min-width: 1200px) {
+  h2,
+  .h2 {
+    font-size: 3.2rem;
+  }
+}
+
+h3,
+.h3 {
+  font-size: calc(2.08rem + 0.6vw);
+}
+
+@media (min-width: 1200px) {
+  h3,
+  .h3 {
+    font-size: 2.8rem;
+  }
+}
+
+h4,
+.h4 {
+  font-size: calc(2.04rem + 0.3vw);
+}
+
+@media (min-width: 1200px) {
+  h4,
+  .h4 {
+    font-size: 2.4rem;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 3.2rem;
+}
+
+h6,
+.h6 {
+  font-size: 1.6rem;
+}
+
+p {
+  margin-block-start: 0;
+  margin-block-end: 1.6rem;
+}
+
+ol,
+ul {
+  padding-inline-start: 3.2rem;
+}
+
+ol,
+ul {
+  margin-block-start: 0;
+  margin-block-end: 1.6rem;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-block-end: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #3a57e8;
+}
+
+a:hover {
+  color: #2e46ba;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+input, textarea {
+  background-color: var(--white-default);
+  color: var(--body-color);
+}
+
+.panel > article .btn-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.panel > article .btn-container .right-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline-start: auto;
+}

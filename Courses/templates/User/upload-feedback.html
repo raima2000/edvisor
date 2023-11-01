@@ -1,0 +1,33 @@
+{% extends 'Courses/base-class-course.html' %}
+{% load static %}
+
+{% block title %}
+  <title>{{ student_class }} Send Feedback </title>
+{% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'User/base-upload.css' %}">
+  <link rel="stylesheet" href="{% static 'User/upload-announcement.css' %}">
+{% endblock %}
+
+{% block class-feedback-active %}active{% endblock %}
+
+{% block panel-content %}
+  <article>
+    <div class="heading">
+      <h3 class="title">Send Feedback</h3>
+    </div>
+    <br/>
+    <form action="{% url 'student-class-feedback-page' student.id student_class.id %}" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="btn-container">
+        <a class="btn cancel" href="{% url 'student-class-announcement-page' student.id student_class.id %}">
+          Cancel
+        </a>
+        <input class="btn post" name="send_button" type="Submit" value="Send"/>
+      </div>
+    </form>
+  </article>
+{% endblock %}

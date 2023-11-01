@@ -1,0 +1,33 @@
+{% extends 'Home/index.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Contact</title>
+{% endblock title %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{% static 'Home/announcement.css' %}">
+{% endblock %}
+
+{% block announcements-active %}active{% endblock %}
+
+{% block main-content %}
+    <article class="panel announcement general-information">
+        <h2>Contact us</h2>
+            <p>
+Learning Management System <br>
+Bengaluru 560076, India <br>
+<li><a href="tel:+91 8391654390">
+  Tel: +91 8391654390
+</a></li>
+<!--Tel: (028) 37244270 <br>-->
+<!-- <li><a href="tel:02837244270">
+  Fax: (028) 37244271
+</a></li> -->
+<!--Fax: (028) 37244271 <br>-->
+<li><a href="mailto:edvisor@edu.in">
+Email:  edvisor@edu.in
+</a></li>
+            </p>
+    </article>
+{% endblock %}

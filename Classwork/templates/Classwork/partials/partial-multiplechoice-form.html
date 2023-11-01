@@ -1,0 +1,23 @@
+{%extends 'Classwork/base-test.html'%}
+{%block body%}
+<div>
+  <form method="POST">
+    {% csrf_token %}
+  {{form.as_p}}
+  <div>
+    {%if error%}
+    {{error}}
+    {%endif%}
+  </div>
+  <div id="choiceform">
+  </div>
+  <div>
+    <button hx-get="{% url 'mco-form' id class_id qid%}" hx-swap = "beforeend" hx-target="#choiceform">Add choice</button>
+  </div>
+  <div>
+    <button type="submit">Save</button>
+  </div>
+</form>
+  <hr>
+</div>
+{%endblock%}

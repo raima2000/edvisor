@@ -1,0 +1,72 @@
+.panel > * {
+  margin-block-end: 2rem;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.panel > *:last-child {
+  margin-block-end: 0;
+  border-bottom: none;
+}
+
+/* Panel header */
+.panel > header {
+  --hover-transition: 0.25s ease-out;
+
+  padding-block-end: 2rem;
+}
+
+.panel > header h2 {
+  margin-block-end: 1rem;
+
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+  color: var(--gray-dark);
+
+  text-align: unset;
+  word-wrap: anywhere;
+}
+
+.panel > header p {
+  margin-block-end: 2rem;
+  color: var(--gray-dark);
+
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+.panel > header .flex-tabs {
+  display: flex;
+  flex-wrap: wrap;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: var(--gray-dark);
+}
+
+.panel > header .tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin-inline-end: 1rem;
+  margin-block-end: 1rem;
+
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+
+  color: var(--gray-dark);
+  border-radius: 6px;
+  transition: background-color var(--hover-transition);
+}
+
+.panel > header .tab:hover {
+  background-color: var(--gray-lighter);
+}
+
+.panel > header .active {
+  background: var(--gray-lighter);
+}

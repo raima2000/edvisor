@@ -1,0 +1,342 @@
+[
+  {
+    "model": "User.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$4LSuJN1WeX0bE0cTIHbfbR$AzXdRlsRLd7AVk2xILN28tSynOtjKTOUJgsUszbkmpc=",
+      "last_login": "2021-10-13T16:27:54.915Z",
+      "is_superuser": false,
+      "email": "loan.nguyen@lecturer.com",
+      "first_name": "Loan",
+      "middle_name": "Thi Thuy",
+      "last_name": "Nguyen",
+      "phone_number": "0123456789",
+      "is_admin": false,
+      "is_staff": false,
+      "is_active": true,
+      "user_type": "Lecturer",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "User.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$4bofNgBBih51AXzWK1rof6$xzTW8BeOZ08Wm50EA50lTD96KRdKnMXsDDe3cTfamt0=",
+      "last_login": "2021-10-13T16:12:03.442Z",
+      "is_superuser": false,
+      "email": "duong.le@lecturer.com",
+      "first_name": "Duong",
+      "middle_name": "Hai",
+      "last_name": "Le",
+      "phone_number": "0993109475",
+      "is_admin": false,
+      "is_staff": false,
+      "is_active": true,
+      "user_type": "Lecturer",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "User.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$hZfLIS2Ep9pYmc56BdP3H8$SSGwO+gCL4IIW5pgWmkJ69WKtsXPrHdCzbfQqf6TIe0=",
+      "last_login": "2021-10-12T21:05:02.424Z",
+      "is_superuser": false,
+      "email": "sinh.nguyen@lecturer.com",
+      "first_name": "Sinh",
+      "middle_name": "Van",
+      "last_name": "Nguyen",
+      "phone_number": "0655949888",
+      "is_admin": false,
+      "is_staff": false,
+      "is_active": true,
+      "user_type": "Lecturer",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "User.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$Ik5N3Zq1bAUnRnNFTJmMDA$CllGosTi3IZMk6Xs6ECLj7HejlJ3e8yVktX0c5V3y5M=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "tung.tran@lecturer.com",
+      "first_name": "Tung",
+      "middle_name": "Thanh",
+      "last_name": "Tran",
+      "phone_number": "0748307073",
+      "is_admin": false,
+      "is_staff": false,
+      "is_active": true,
+      "user_type": "Lecturer",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "User.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$SbkxoVbQ7dIN1JlIr6jD53$4fT2omTrLt88MF2bXiYCl4jny/+eF7s5M49Pk+OloFA=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "quang.do@lecturer.com",
+      "first_name": "Quang",
+      "middle_name": "Minh",
+      "last_name": "Do",
+      "phone_number": "0975678783",
+      "is_admin": false,
+      "is_staff": false,
+      "is_active": true,
+      "user_type": "Lecturer",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "User.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$V2BsxnhydZJGzgx6c1fPVT$ziGhk9oYdZ8gc00yxbWHjJRUzZnUa4HhwJpwVZUOMXw=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "son.le@lecturer.com",
+      "first_name": "Son",
+      "middle_name": "Thanh",
+      "last_name": "Le",
+      "phone_number": "0755949888",
+      "is_admin": false,
+      "is_staff": false,
+      "is_active": true,
+      "user_type": "Lecturer",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "User.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$0vIIwn6KprR3onPNnYhdgm$FbIpI6jQ7dJWw9VujqugLeMMX6p5Q7VIH27ClBjq+Jg=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "duy.dinh@student.com",
+      "first_name": "Duy",
+      "middle_name": "Bao",
+      "last_name": "Dinh",
+      "phone_number": "0694209110",
+      "is_admin": false,
+      "is_staff": false,
+      "is_active": true,
+      "user_type": "Student",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "User.user",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$ROnRK1JwBXXbk7EV7mgcsz$I0VdMl6lKV8bcbFEJNUexYcf4i5j1j1gryfKr6+2i2s=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "lam.huynh@student.com",
+      "first_name": "Lam",
+      "middle_name": "Hoc",
+      "last_name": "Huynh",
+      "phone_number": "0824865623",
+      "is_admin": false,
+      "is_staff": false,
+      "is_active": true,
+      "user_type": "Student",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "User.user",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$UySJYFpSiVuhyrLoJZCKgS$+lfaw1Tz4p4ezgz0k9dF/skRStCpBlebj4DIFqA4iVY=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "khoa.ha@student.com",
+      "first_name": "Khoa",
+      "middle_name": "Minh",
+      "last_name": "Ha",
+      "phone_number": "0943951829",
+      "is_admin": false,
+      "is_staff": false,
+      "is_active": true,
+      "user_type": "Student",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "User.user",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$SQ6m4SYODBTViAkWt0dssf$mWIX2oElaaI0dVzKhjkNIL5njSsHVfMxZTHX1a9klHQ=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "khoa.nguyen@student.com",
+      "first_name": "Khoa",
+      "middle_name": "Anh",
+      "last_name": "Nguyen",
+      "phone_number": "0898495686",
+      "is_admin": false,
+      "is_staff": false,
+      "is_active": true,
+      "user_type": "Student",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "User.user",
+    "pk": 11,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$kjpY2b9sKFIVAReZP0J1C4$d7Ch6YBAWNO7ATcMmliPdylTT2UU2iN/h22FkXO0Ph0=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "minh.do@student.com",
+      "first_name": "Minh",
+      "middle_name": "Quang",
+      "last_name": "Do",
+      "phone_number": "0724865623",
+      "is_admin": false,
+      "is_staff": false,
+      "is_active": true,
+      "user_type": "Student",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "User.user",
+    "pk": 12,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$9rMhmCLhWDZPiDrCHRWyli$9e1gvx11UBY2fa2bl1ZMVzKTGOwXn239V5685/cp25c=",
+      "last_login": "2021-10-13T16:20:30.752Z",
+      "is_superuser": false,
+      "email": "ha.ung@student.com",
+      "first_name": "Ha",
+      "middle_name": "Thu",
+      "last_name": "Ung",
+      "phone_number": "0898407862",
+      "is_admin": false,
+      "is_staff": false,
+      "is_active": true,
+      "user_type": "Student",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "User.user",
+    "pk": 13,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$TVg5GrAfMK7LH05CFr8Pz9$PJJUe20qo4pH17PnRi+oMbdzcd8lzkDwrfRor8Rvqa4=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "a.nguyen@student.com",
+      "first_name": "A",
+      "middle_name": "Van",
+      "last_name": "Nguyen",
+      "phone_number": "0908357411",
+      "is_admin": false,
+      "is_staff": false,
+      "is_active": true,
+      "user_type": "Student",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "User.user",
+    "pk": 14,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$jBhwHv19XRV8WRCM83NyU8$s8mAiCUzC7OPSrR/dDLQRBQOzw+vGJbF30cLE+yetBU=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "b.nguyen@student.com",
+      "first_name": "B",
+      "middle_name": "Van",
+      "last_name": "Nguyen",
+      "phone_number": "0849464711",
+      "is_admin": false,
+      "is_staff": false,
+      "is_active": true,
+      "user_type": "Student",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "User.user",
+    "pk": 15,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$qrUYno0nIdWoPIDEV0x3cT$8FSLazRaBFPKFfVp9YPJH/0dKQAam7WoZGmjS1+/l+c=",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "c.nguyen@student.com",
+      "first_name": "C",
+      "middle_name": "Van",
+      "last_name": "Nguyen",
+      "phone_number": "0849464711",
+      "is_admin": false,
+      "is_staff": false,
+      "is_active": true,
+      "user_type": "Student",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "User.user",
+    "pk": 17,
+    "fields": {
+      "password": "pbkdf2_sha256$260000$2DTYdHdYSRQU3HIiy3J28H$33uaZtA/jbxGWxSyAQ6bzvfsxZsevlQtMDeOsnf7C70=",
+      "last_login": "2021-10-13T16:11:18.430Z",
+      "is_superuser": true,
+      "email": "admin@admin.com",
+      "first_name": "",
+      "middle_name": "",
+      "last_name": "",
+      "phone_number": "",
+      "is_admin": true,
+      "is_staff": true,
+      "is_active": true,
+      "user_type": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "User.user",
+    "pk": 18,
+    "fields": {
+      "password": "",
+      "last_login": null,
+      "is_superuser": false,
+      "email": "synh.ha@lecturer.com",
+      "first_name": "Synh",
+      "middle_name": "Viet Uyen",
+      "last_name": "Ha",
+      "phone_number": "0568308453",
+      "is_admin": false,
+      "is_staff": false,
+      "is_active": true,
+      "user_type": "Lecturer",
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]

@@ -1,0 +1,70 @@
+{% extends 'Home/index.html' %}
+{% load static %}
+
+{% block title %}
+    <title>{{ page_title }}</title>
+{% endblock title %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{% static 'User/personal-info.css' %}">
+{% endblock %}
+
+{% block main-content %}
+<section class="panel announcement personal-information">
+            <h2>{{ page_title }}</h2>
+            <section class="information">
+                <div class="container">
+                    <div class="left-col">
+                        <img src="{% static 'icons/big-avatar-icon-svg.svg' %}" class="my-avatar" alt="My avatar">
+                    </div>
+
+                    <section class="information-list">
+                        <table>
+                            <tr>
+                                <th>NAME</th>
+                                <td>{{ userObj.full_name|upper }}</td>
+                            </tr>
+                            <tr>
+                                <th>ROLE</th>
+                                <td>{{ userObj.user_type }}</td>
+                            </tr>
+                            {% if userObj.user_type == 'Student' %}
+                            <tr>
+                                <th>MAJOR</th>
+                                <td>{{ userObj.student.major_id.name }}</td>
+                            </tr>
+                            <tr>
+                                <th>DATE OF BIRTH</th>
+                                <td>N/A</td>
+                            </tr>
+                            {% else %}
+                            {% endif %}
+                            {% if userObj.user_type == 'Lecturer' %}
+                            <tr>
+                                <th>DEPARTMENT</th>
+                                <td>N/A</td>
+                            </tr>
+                            <tr>
+                                <th>PHONE NUMBER</th>
+                                <td>{{ userObj.phone_number }}</td>
+                            </tr>
+                            {% else %}
+                            {% endif %}
+                            <tr>
+                                <th>EMAIL ADDRESS</th>
+                                <td>{{ userObj.email|urlize }}</td>
+                            </tr>
+                        </table>
+
+                        {% if userObj == user %}
+                        <footer class="change-password">
+                            <a class="change-password-btn" href="{% if userObj.user_type == 'Lecturer' %}{% url 'lecturer-change-password' userObj.id %}
+                                                                 {% elif userObj.user_type == 'Student' %}{% url 'student-change-password' userObj.id %}
+                                                                 {% endif %}">Change Password</a>
+                        </footer>
+                        {% endif %}
+                    </section>
+                </div>
+            </section>
+        </section>
+{% endblock %}

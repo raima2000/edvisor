@@ -1,0 +1,102 @@
+@import url(base.css);
+
+article.panel > * {
+  margin-bottom: 3rem;
+}
+
+article.panel h2 {
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.1rem;
+  color: var(--gray-dark);
+  text-align: unset;
+
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+article.panel > footer {
+  text-align: right;
+}
+
+article.panel > footer .view-all-btn {
+  padding: 1rem;
+  color: var(--iu-secondary-default);
+  font-weight: bold;
+  margin: 0;
+}
+
+article.panel > footer .view-all-btn:hover {
+  color: var(--iu-secondary-dark);
+}
+
+
+/* Announcement List */
+.announcement > article {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.announcement > article .heading  {
+  color: var(--iu-primary-default-text);
+  width: 76.6%;
+}
+
+.announcement > article .heading h3:hover {
+  color: var(--iu-primary-dark-text);
+}
+
+.announcement > article footer {
+  width: 15.5rem;
+  padding-block: 1rem;
+  margin-inline-start: auto;
+  
+  color: var(--gray-default);
+  text-align: right;
+}
+
+.announcement > article {
+  opacity: 0;
+  animation: riseUpAnimation 8s ease forwards;
+  animation-delay: calc(var(--order) * 200ms);
+}
+
+@keyframes riseUpAnimation {
+  20% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+
+  30%, 100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* General information panel */
+
+
+
+/* Courses Announcements panel */
+.courses-announcements > article .heading p  {
+  margin-bottom: 0.4rem;
+  color: var(--gray-default);
+  font-weight: 500;
+}
+
+.courses-announcements > article .heading p:hover  {
+  color: var(--gray-dark);
+}
+
+.courses-announcements > article .heading h3  {
+  color: var(--iu-primary-default-text);
+  font-weight: 700;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+}
+.courses-announcements > article .heading h3:hover  {
+  color: var(--iu-primary-dark-text);
+}

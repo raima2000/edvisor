@@ -1,0 +1,35 @@
+
+{% extends 'User/base-auth.html' %}
+{% load static %}
+
+{% block title %}
+  <title>Login</title>
+{% endblock title %}
+
+{% block stylesheets %}
+  <link rel="stylesheet" href="{% static 'User/login.css' %}">
+{% endblock stylesheets %}
+
+{% block inner-panel-1 %}
+  <div class="iulogo">
+    <a href="{% url 'guest-announcement-page' %}">
+      <img src="{% static 'images/iu-image-png.png' %}" alt="IU Logo">
+    </a>
+  </div>
+  <div><h3 class="projectname"><b>Learning Management System</b></h3></div>
+{% endblock inner-panel-1 %}
+
+{% block inner-panel-2 %}
+  <div class="loginpanel">
+    <form method="post">
+      {% csrf_token %}
+      <div>{{ form.as_p }}</div>
+      <div class="forgotpass"><a href="{% url 'forgot-password' %}">Forgot password?</a>
+      </div>
+      <input class="loginbutton" type="submit" value="Login" name="login"/>
+    </form>
+    <p class="or"><span><b>or</b></span></p>
+    <a class="loginasguessbutton" href="{% url 'logout' %}">Login as Guest</a>
+  </div>
+{% endblock inner-panel-2 %}
+

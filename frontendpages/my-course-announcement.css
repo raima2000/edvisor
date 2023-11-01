@@ -1,0 +1,25 @@
+/* Course Announcements Tab */
+.panel > article .heading {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.panel > article .heading h3 {
+  color: var(--black-default);
+
+  font-weight: bold;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+}
+
+.panel > article .heading footer {
+  padding-block: 1rem;
+  margin-inline-start: auto;
+  text-align: right;
+  color: var(--gray-default);
+}
+
+.panel > article p {
+  margin-block: 3rem;
+}

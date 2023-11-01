@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="loginpage.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="base.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blackboard Learn</title>
+        <link rel = "icon" href = "../frontendpages/images/blackboard_icon.png" type ="image/x-icon">
+    </head>
+
+    <body>
+        <div id="background"><img src="../frontendpages/images/signin-background-image-png.png"></div>
+        <div class="mainpanel">
+            <div class="innerpanel">
+                <div class="part1">
+                    <div class="iulogo">
+                        <a href="#" target="_blank"><img src="D:/Raima/SJC BDA PG/SEM 3/CC/Edvisor-20230903T134957Z-001/Edvisor/frontendpages/images/iu-image-png.png"></a>
+                    </div>
+                    <div><h3 class="projectname"><b>Sign In</b></h3></div>
+                </div>
+                <div class="part2">
+                    <div class="loginpanel">
+                        <div class="username"><input type="text" name="uusern" class="user" size="25" maxlength="50" autocomplete="off" placeholder="Username" required></div>
+                        <div class="password"><input type="password" name="passw" class="pass" id="inputpass" size="25" maxlength="50" autocomplete="off" placeholder="Password" required></div>
+                        <div class="passvisibility"><input type="checkbox" onclick="myFunction()"> Show Password</div> 
+                        <div class="forgotpass"><a href="#" target="_blank"><b><u>Forgot password?</u></b></a></div>
+                    </div>
+                    <input class="loginbutton" type="submit" value="Login"/>
+                    <p class="or"><span><b>OR</b></span></p>
+                    <input class="loginasguessbutton" type="submit" value="Login as Guest"/>
+                     <!-- <script>
+                        
+                        document.getElementById("loginForm").addEventListener("submit", function(event) {
+                            event.preventDefault(); // Prevent form submission
+                            var username = document.getElementById("username").value;
+                            var password = document.getElementById("password").value;
+                
+                            // Check if the username and password match your dummy credentials
+                            if (username === "student@edu.com" && password === "student@edu") {
+                                // Redirect to the next page (replace 'next-page.html' with your actual page URL)
+                                window.location.href = "index.html";
+                            } else {
+                                alert("Invalid username or password. Please try again.");
+                            }
+                        });
+                    </script>   -->
+                </div>
+            </div>
+        </div>
+         
+        <script>
+            function myFunction() {
+                var x = document.getElementById("inputpass");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            } 
+        </script>
+    </body>
+</html>

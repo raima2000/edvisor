@@ -1,0 +1,7 @@
+
+{{question.question}}
+{%if not question.is_written%}
+{%for option in question.multiplechoiceoption_set.all%}
+{{option}}
+{%endfor%}
+{%endif%}

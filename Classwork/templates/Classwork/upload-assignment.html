@@ -1,0 +1,86 @@
+{% extends 'Classwork/base-test.html' %}
+{% load static %}
+
+{% block title %}
+  <title>{{ student_class.course.name }} - {{ student_class.schedule }} Take Assignment</title>
+{% endblock title %}
+
+{% block stylesheets %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'User/upload-assignment.css' %}">
+  <!-- <link rel="stylesheet" href="{% static 'Courses/class-announcement.css' %}"> -->
+  <script src="{% static 'User/upload-content.js' %}" defer></script>
+{% endblock %}
+
+{% block panel-content %}
+<article>
+    <div class="heading">
+        <h3>{{test.test_name}}</h3>
+        <footer>
+            <time datetime="2021-10-16T14:58:02.692000+00:00"><div class="due-date">Due Date</div>
+                {{test.end_time}}
+            </time>
+          </footer>
+    </div>
+    {% if not done %}
+    <div class="description">
+        <p>{{test.test_description}}</p>
+    </div>
+    <p class="file">
+        <a href="{% url 'download-test-file' id class_id test.id%}">
+            Download test file
+        </a>
+    </p>
+        {% endif %}
+        {% if not done %}
+    <form method="POST" action="#" enctype="multipart/form-data">
+        {%csrf_token%}
+        {{form.as_p}}
+        
+        <div class="btn-container">
+            <a class="btn cancel" href="{% url 'student-class-assignment-page' id class_id%}">
+                Cancel
+              </a>
+            <input class="btn post" type="submit" value="Submit"/>
+        </div>
+    </form>
+    {% else %}
+    <div>
+        <h4>
+            Test submitted 
+            <time datetime="2021-10-16T14:58:02.692000+00:00">
+                {{studenttest.submit_time}}
+        </time>
+        </h4>
+        
+        <p class="file">
+            <a href="{% url 'download-student-file' id class_id studenttest.id %}">Download
+                your submission</a>
+        </p>
+        
+        {%if grade%}
+        <div class="grade">
+            <h4>Grade: </h4>
+            <p class="highlight">{{grade}}</p>
+            <p>/100</p>
+          </div>
+        {%else%}
+        <div class="grade">
+            <h4>Grade: </h4>
+            <p class="highlight">-</p>
+            <p>/100</p>
+          </div>
+        {%endif%}
+        <form action="">
+            <div class="btn-container">
+            <a class="btn cancel" href="{% url 'student-class-assignment-page' id class_id%}">
+                Return
+              </a>
+        </div>
+        </form>
+        
+    </div>
+    {% endif %}
+</article>
+
+{% endblock %}

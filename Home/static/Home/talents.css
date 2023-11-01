@@ -1,0 +1,43 @@
+body {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, var(--gray-dark), var(--gray-default));
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 4rem;
+  gap: 2rem;
+}
+
+main svg {
+  color: var(--gray-lighter);
+}
+
+main svg .step1 {
+  stroke-dasharray: var(--length);
+  stroke-dashoffset: var(--length);
+  animation: var(--animn, sign 5s ease forwards);
+  animation-delay: calc(var(--order) * 5s);
+}
+
+main svg .step2 {
+  stroke-dasharray: var(--length);
+  stroke-dashoffset: var(--length);
+  animation: var(--animn, sign 1s ease forwards);
+  animation-delay: var(--animdel, calc(5s + var(--order) * 5s));
+}
+
+@keyframes sign {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+[data-animation-reload]:checked ~ main svg {
+  --animn: none;
+}
+
+[data-animation-type]:checked ~ main svg {
+  --animdel: calc(5.5s * 3);
+}

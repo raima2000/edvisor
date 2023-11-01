@@ -1,0 +1,67 @@
+/* Class Assignment Tab */
+
+.panel > article {
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: var(--riseUpAnimation);
+  animation-delay: calc(var(--order) * 100ms + 0.3s);
+}
+
+.panel > header {
+  margin-block-end: 3rem;
+}
+
+.panel > h4 {
+  padding-block: 1rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--gray-default);
+}
+
+.panel > article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block-end: 3rem;
+  margin-block-end: 3rem;
+}
+
+.panel > article:last-child {
+  margin-block-end: 0;
+}
+
+.panel > article p {
+  margin: 0;
+}
+
+.panel > article .heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+}
+
+.panel > article .heading h3 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: var(--black-default);
+}
+
+.panel > article .heading p {
+  font-weight: 400;
+  font-size: 1.8rem;
+  color: var(--gray-default);
+}
+
+.panel > article .container {
+  display: flex;
+  gap: 2rem;
+}
+
+.panel > article .container a {
+  color: var(--gray-default);
+}
+
+.panel > article .container a:hover {
+  color: var(--gray-light-text);
+}

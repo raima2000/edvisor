@@ -1,0 +1,56 @@
+/* Class Announcements Tab */
+
+.panel > article {
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: var(--riseUpAnimation);
+  animation-delay: calc(var(--order) * 100ms + 0.3s);
+}
+
+.panel > article .heading {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.panel > article .heading h3 {
+  color: var(--black-default);
+
+  font-weight: bold;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+}
+
+.panel > article .heading footer {
+  display: flex;
+  gap: 2rem;
+  margin-inline-start: auto;
+  text-align: right;
+  color: var(--gray-default);
+}
+
+.panel > article p {
+  margin-block-end: 3rem;
+}
+
+.panel > article .content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.panel > article .content .edit {
+  display: flex;
+  margin-inline-start: auto;
+}
+
+
+.panel > article:target .content {
+  animation: blink 0.2s ease 4 alternate;
+  animation-delay: calc(var(--order) * 100ms + 1.2s);
+}
+
+@keyframes blink {
+  to {
+    background-color: var(--iu-secondary-light);
+  }
+}

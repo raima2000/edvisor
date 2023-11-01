@@ -1,0 +1,32 @@
+{% extends 'Home/index.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Guest Announcements</title>
+{% endblock title %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{% static 'Home/announcement.css' %}">
+{% endblock %}
+
+{% block announcements-active %}active{% endblock %}
+
+{% block main-content %}
+    <article class="panel announcement general-information">
+        <h2>General Information
+          <br></br>
+          <form action="{% url 'guest-announcement-search' %}" method="get">
+            <input name="search" type="text" placeholder="Search...">
+          </form>
+        </h2>
+        {% for announcement in announcements %}
+        <article style="--order: 1">
+            <a class="heading" href="{%url 'guest-announcement-viewpage' announcement.id %}"><!--<h3>THÔNG BÁO VỀ KHẢO SÁT SINH VIÊN TỐT NGHIỆP_HỌC KỲ 1 NĂM HỌC 2020-2021-->{{announcement.title}}<!--</h3>-->
+            </a>
+            <footer>
+                <!--<time datetime="2021-05-16 19:00">16/05/2021 announcement.time_announced-->{{announcement.time_created}}<!--</time>-->
+            </footer>
+        </article>
+        {% endfor %}
+    </article>
+{% endblock %}

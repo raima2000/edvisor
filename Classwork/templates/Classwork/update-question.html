@@ -1,0 +1,27 @@
+{%extends 'Classwork/base-test.html'%}
+{%block panel-content%}
+<article>
+  <form method="POST">
+  {% csrf_token %}
+  <label for="question">Question:  </label><input type="text" value="{{question.question}}" id="question" name=question>
+  {%if question.is_written%}
+  <button type="submit">Update</button>
+  {%else%}
+  {%for option in question.multiplechoiceoption_set.all%}
+  <p>
+  <label for="option.id">Option:  </label>
+  <input type="text" value="{{option.option}}" id="{{option.id}}" name="{{option.id}}">
+  <label>Is true: </label>
+  {%if option.is_true%}
+  <input type="checkbox" checked id="{{option.id}}" name="{{option.id}}">
+  {%else%}
+  <input type="checkbox" id="{{option.id}}" name="{{option.id}}">
+  </p>
+  {%endif%}
+  {%endfor%}
+  {%endif%}
+  <button type="submit">Save</button>
+</form>
+</article>
+
+{%endblock %}

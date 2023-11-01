@@ -1,0 +1,88 @@
+{% extends 'Courses/base-class-course.html' %}
+{% load static %}
+
+{% block title %}
+<title>{{ class }} Student List</title>
+{% endblock title %}
+
+{% block stylesheets %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'Courses/class-student-performance.css' %}">
+{% endblock %}
+
+{% block class-view-student-list-active %}active{% endblock %}
+
+{% block panel-content %}
+
+  <article>
+    <div class="heading">
+      <h3>Homework 1</h3>
+      <p class="due-text">DUE: Tue, Sep 7 12:00PM</p>
+    </div>
+    <div class="status">
+      <p>SUBMITTED (LATE)</p>
+      <p>Wed, Sep 8 10:23:03 PM</p>
+    </div>
+    <div class="grade">
+      <p class="highlight">-</p>
+      <p>/100</p>
+    </div>
+  </article>
+  <article>
+    <div class="heading">
+      <h3>Homework 1</h3>
+      <p class="due-text">DUE: Tue, Sep 7 12:00PM</p>
+    </div>
+    <div class="status">
+      <p>SUBMITTED (LATE)</p>
+      <p>Wed, Sep 8 10:23:03 PM</p>
+    </div>
+    <div class="grade">
+      <p class="highlight">-</p>
+      <p>/100</p>
+    </div>
+  </article>
+  <article>
+    <div class="heading">
+      <h3>Quiz - Week 1</h3>
+      <p class="due-text">DUE: Tue, Sep 7 12:00PM</p>
+    </div>
+    <div class="status">
+      <p>SUBMITTED</p>
+      <p>Wed, Sep 8 10:23:03 PM</p>
+    </div>
+    <div class="grade">
+      <p class="highlight">-</p>
+      <p>/100</p>
+    </div>
+  </article>
+  <article>
+    <div class="heading">
+      <h3>Homework 2</h3>
+      <p class="due-text">DUE: Tue, Sep 7 12:00PM</p>
+    </div>
+    <div class="status">
+      <p>Not SUBMITTED</p>
+      {#      <p>Wed, Sep 8 10:23:03 PM</p>#}
+    </div>
+    <div class="grade">
+      <p class="highlight">-</p>
+      <p>/100</p>
+    </div>
+  </article>
+  <article>
+    <div class="heading">
+      <h3>Quiz - Week 1</h3>
+      <p class="due-text">DUE: Tue, Sep 7 12:00PM</p>
+    </div>
+    <div class="status">
+      <p>Graded</p>
+      <p>Mon, Sep 6 10:23:03 PM</p>
+    </div>
+    <div class="grade">
+      <p class="highlight">90</p>
+      <p>/100</p>
+    </div>
+  </article>
+
+{% endblock %}
