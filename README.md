@@ -22,17 +22,5 @@ for communication between the top and bottom level.
 - Bottom tier: Data storage layer which is implemented by using a database
 management system.
 
-## Development timeline
-Development phases of the product follow the SCRUM framework:
-- Pre-developmental work (1-2 weeks): Research, planning, resource allocation.
-- Front-end development (2-4 weeks): Interface and front-end structure design.
-- Back-end development (2-4 weeks): Database creation and integration.
-- QA testing (1-2 weeks): Quality control.
 
-Each phase consists of 1-2 sprints that last 1-2 weeks. At the start of each sprint, the team
-leader will hold a meeting where the sprint backlog will be formed from product backlog.
-At the end of each day during the sprint, a brief meeting will also be held to ensure quality,
-progress and help each member stay on track. Each sprint time box will end with a final
-meeting where the team reflects, reviews and compares with goals set out at the start of
-said sprint.
 "# edvisor" 
